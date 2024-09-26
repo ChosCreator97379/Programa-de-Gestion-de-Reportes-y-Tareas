@@ -38,54 +38,14 @@ namespace CapaPresentacion
             cmbCampoBusqueda.SelectedIndex = 0; // Seleccionar el primer elemento por defecto
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int id;
-                if (int.TryParse(txtId.Text, out id))
-                {
-                    DataTable dt = CapaNegocio.EmpleadoCN.BuscarEmpleadoPorID(id);
-                    if (dt.Rows.Count > 0)
-                    {
-                        DataRow row = dt.Rows[0];
-                        txtNombre.Text = row["Nombre"].ToString();
-                        txtApellido.Text = $"{row["Apellido1"]} {row["Apellido2"]}";
-                        txtCargo.Text = row["Cargo"].ToString();
-                        txtArea.Text = row["Area"].ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se encontró ningún empleado con ese ID.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, ingrese un ID válido.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
-        }
+        
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            int idEmpleado = Convert.ToInt32(txtId.Text); // ID del empleado que buscaste
-            DateTime fecha = Fecha.Value; // Fecha seleccionada
-            TimeSpan hora = Hora.Value.TimeOfDay; // Hora seleccionada
-            string tipoRegistro = txtTipoRegistro.SelectedItem.ToString(); // 'Entrada' o 'Salida'
-
-            asistenciaCN.GuardarAsistencia(idEmpleado, fecha, hora, tipoRegistro);
-
-            MessageBox.Show("Asistencia registrada correctamente.");
-        }
+        
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -170,16 +130,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            LimpiarControles(this);
-
-            // Restablecer los DateTimePicker al valor actual
-            Fecha.Value = DateTime.Now;
-            Hora.Value = DateTime.Now;
-
-            // También puedes limpiar otros controles si los tienes, como ComboBox, etc.
-        }
+       
         private void LimpiarControles(Control parent)
         {
             foreach (Control control in parent.Controls)
