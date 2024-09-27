@@ -23,19 +23,11 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Registro_E_S_Load(object sender, EventArgs e)
         {
-            // Poblar el ComboBox con los campos de búsqueda
-            cmbCampoBusqueda.Items.Add("ID_Empleado");
-            cmbCampoBusqueda.Items.Add("HoraEntrada");
-            cmbCampoBusqueda.Items.Add("HoraSalida");
-            cmbCampoBusqueda.Items.Add("Fecha");
-            cmbCampoBusqueda.SelectedIndex = 0; // Seleccionar el primer elemento por defecto
+            
         }
 
         
@@ -83,52 +75,9 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (dataGridView.SelectedRows.Count > 0)
-            {
-                // Obtener el ID de la fila seleccionada
-                int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells["ID"].Value);
+        
 
-                // Crear una nueva instancia del formulario de edición, pasando el ID del registro
-                EditarRegistro editarRegistro = new EditarRegistro(id);
-
-                // Mostrar el formulario de edición
-                editarRegistro.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione una fila para editar.");
-            }
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (dataGridView.SelectedRows.Count > 0) // Verificar si hay una fila seleccionada
-            {
-                int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells["ID"].Value); // Obtener el ID de la fila seleccionada
-
-                // Confirmación de eliminación
-                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?", "Confirmar eliminación", MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    bool eliminado = asistenciaCN.EliminarAsistencia(id); // Llamar al método de la capa de negocio
-                    if (eliminado)
-                    {
-                        MessageBox.Show("Registro eliminado correctamente.");
-                        btnActualizar_Click(sender, e); // Refrescar el DataGridView después de la eliminación
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al eliminar el registro.");
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona un registro para eliminar.");
-            }
-        }
+        
 
        
         private void LimpiarControles(Control parent)
@@ -184,16 +133,8 @@ namespace CapaPresentacion
            
         }
 
-        private void txtId_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btnCalcular_Click(object sender, EventArgs e)
-        {
-            CalcularHorasSemanales calcularhorassemanasles = new CalcularHorasSemanales();
-            calcularhorassemanasles.Show();
-        }
+        
 
         private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -279,5 +220,7 @@ namespace CapaPresentacion
                 MessageBox.Show($"Error al exportar a Excel: {ex.Message}");
             }
         }
+
+        
     }
 }
