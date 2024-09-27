@@ -116,7 +116,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsistenciaCD.cs" />
     <Compile Include="ConexionCD.cs" />
     <Compile Include="EmpleadosCD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
