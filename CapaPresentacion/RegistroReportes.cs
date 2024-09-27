@@ -73,6 +73,8 @@ namespace CapaPresentacion
         {
         }
 
-        
+        private void groupBox2_Paint(object sender, PaintEventArgs e)
+        {
+        }
     }
 }
