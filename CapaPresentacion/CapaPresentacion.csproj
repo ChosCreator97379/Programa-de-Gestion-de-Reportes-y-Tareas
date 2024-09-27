@@ -165,11 +165,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro_E_S.cs">
+    <Compile Include="RegistroReportes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro_E_S.Designer.cs">
-      <DependentUpon>Registro_E_S.cs</DependentUpon>
+    <Compile Include="RegistroReportes.Designer.cs">
+      <DependentUpon>RegistroReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TablaTarea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TablaTarea.Designer.cs">
+      <DependentUpon>TablaTarea.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Administrador.resx">
       <DependentUpon>Administrador.cs</DependentUpon>
@@ -202,8 +208,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registro_E_S.resx">
-      <DependentUpon>Registro_E_S.cs</DependentUpon>
+    <EmbeddedResource Include="RegistroReportes.resx">
+      <DependentUpon>RegistroReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TablaTarea.resx">
+      <DependentUpon>TablaTarea.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
