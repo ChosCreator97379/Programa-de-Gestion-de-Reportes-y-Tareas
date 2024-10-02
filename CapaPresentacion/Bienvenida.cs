@@ -65,5 +65,11 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void registrosDeTareaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TablaTarea tablatarea = new TablaTarea();
+            tablatarea.Show();
+        }
     }
 }

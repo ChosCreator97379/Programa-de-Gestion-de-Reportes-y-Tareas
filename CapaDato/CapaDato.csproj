@@ -119,6 +119,7 @@
     <Compile Include="ConexionCD.cs" />
     <Compile Include="EmpleadosCD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TareaCD.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

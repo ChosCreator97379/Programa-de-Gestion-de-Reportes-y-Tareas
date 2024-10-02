@@ -145,6 +145,12 @@
     <Compile Include="Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenerarTablaTarea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarTablaTarea.Designer.cs">
+      <DependentUpon>GenerarTablaTarea.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarTablaTarea.resx">
+      <DependentUpon>GenerarTablaTarea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

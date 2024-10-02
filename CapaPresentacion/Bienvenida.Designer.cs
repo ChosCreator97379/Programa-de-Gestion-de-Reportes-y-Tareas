@@ -35,6 +35,7 @@
             this.administradorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.registrosDeTareaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.registroDeEntradaYSalidaToolStripMenuItem1,
-            this.administradorToolStripMenuItem1});
+            this.administradorToolStripMenuItem1,
+            this.registrosDeTareaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -113,6 +115,15 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // registrosDeTareaToolStripMenuItem
+            // 
+            this.registrosDeTareaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.registrosDeTareaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.registrosDeTareaToolStripMenuItem.Name = "registrosDeTareaToolStripMenuItem";
+            this.registrosDeTareaToolStripMenuItem.Size = new System.Drawing.Size(133, 21);
+            this.registrosDeTareaToolStripMenuItem.Text = "Registros de Tarea";
+            this.registrosDeTareaToolStripMenuItem.Click += new System.EventHandler(this.registrosDeTareaToolStripMenuItem_Click);
+            // 
             // Bienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,6 +154,7 @@
         private System.Windows.Forms.ToolStripMenuItem administradorToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem registrosDeTareaToolStripMenuItem;
     }
 }
 
