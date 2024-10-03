@@ -182,11 +182,11 @@
     <Compile Include="Bienvenida.Designer.cs">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editar.cs">
+    <Compile Include="EditarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editar.Designer.cs">
-      <DependentUpon>Editar.cs</DependentUpon>
+    <Compile Include="EditarEmpleado.Designer.cs">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="GenerarTablaTarea.cs">
       <SubType>Form</SubType>
@@ -226,8 +226,8 @@
     <EmbeddedResource Include="Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editar.resx">
-      <DependentUpon>Editar.cs</DependentUpon>
+    <EmbeddedResource Include="EditarEmpleado.resx">
+      <DependentUpon>EditarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarTablaTarea.resx">
       <DependentUpon>GenerarTablaTarea.cs</DependentUpon>

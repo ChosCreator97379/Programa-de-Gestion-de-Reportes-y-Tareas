@@ -80,7 +80,7 @@ namespace CapaDato
 
                 conn.Open();
                 string query = "INSERT INTO Empleados (Nombre1, Nombre2, Apellido1, Apellido2, DNI, Telefono, CorreoElectronico, FechaNacimiento, Direccion, Distrito) " +
-                               "VALUES (@Nombre, @Apellido1, @Apellido2, @DNI, @Telefono, @Correo, @FechaNacimiento, @Direccion, @Distrito); " +
+                               "VALUES (@Nombre1, @Nombre2, @Apellido1, @Apellido2, @DNI, @Telefono, @Correo, @FechaNacimiento, @Direccion, @Distrito); " +
                                "SELECT SCOPE_IDENTITY();";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))

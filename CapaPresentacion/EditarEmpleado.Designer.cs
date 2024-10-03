@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class Editar
+    partial class EditarEmpleado
     {
         /// <summary>
         /// Required designer variable.

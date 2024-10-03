@@ -33,7 +33,7 @@ namespace CapaPresentacion
                 int idEmpleado = Convert.ToInt32(dataGridView.SelectedRows[0].Cells["ID"].Value);
 
                 // Abrir el formulario de edición y pasarle el ID del empleado
-                Editar editarEmpleado = new Editar(idEmpleado);
+                EditarEmpleado editarEmpleado = new EditarEmpleado(idEmpleado);
                 editarEmpleado.ShowDialog();
             }
             else
@@ -68,7 +68,25 @@ namespace CapaPresentacion
 
         private void Administrador_Load(object sender, EventArgs e)
         {
-            
+            {
+                try
+                {
+                    DataTable dt = EmpleadoCN.ObtenerInformacionEmpleados();
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        dataGridView.DataSource = dt;
+                    }
+                    else
+                    {
+                        dataGridView.DataSource = null;
+                        MessageBox.Show("No se encontraron datos para mostrar.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al obtener los datos: {ex.Message}");
+                }
+            }
         }
         private int ObtenerIdEmpleadoSeleccionado()
         {
