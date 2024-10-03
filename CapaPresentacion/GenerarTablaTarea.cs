@@ -20,25 +20,49 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // Validar que el campo de la cuenta no esté vacío
-            if (string.IsNullOrEmpty(txtCuenta.Text))
+            string cuenta = txtCuenta.Text;
+
+            // Tareas predeterminadas para la nueva cuenta
+            List<string> tareas = new List<string>()
             {
-                MessageBox.Show("Por favor ingrese un nombre de cuenta.");
-                return;
+                "hoja de preguntas y respuestas",
+                "arquetipo de cliente",
+                "manual de marca",
+                "-mockup/septiembre",
+                "-las plantillas",
+                "-plan de publicaciones/septiembre",
+                "-hora de publicaciones",
+                "día de publicaciones",
+                "administracion de la cuenta"
+            };
+
+            List<string> fechasLimite = new List<string>()
+            {
+                "", "", "", "", "",
+                "", "", "", ""
+            };
+
+            List<string> completado = new List<string>() { "no", "no", "no", "no", "no", "no", "no", "no", "no" };
+            List<string> links = new List<string>()
+            {
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            };
+
+            // Insertar cada tarea en la base de datos
+            for (int i = 0; i < tareas.Count; i++)
+            {
+                TareaCN.InsertarTarea(cuenta, tareas[i], fechasLimite[i], completado[i], links[i]);
             }
 
-            // Verificar si la cuenta ya existe en la base de datos
-            if (TareaCN.VerificarCuentaExiste(txtCuenta.Text))
-            {
-                MessageBox.Show("La cuenta ya existe. Por favor, ingrese una cuenta diferente.");
-                return;
-            }
-
-            // Insertar la cuenta en la tabla
-            TareaCN.InsertarNuevaCuenta(txtCuenta.Text);
-
-            MessageBox.Show("Cuenta creada correctamente.");
-            this.Close(); // Cerrar el formulario después de guardar
+            MessageBox.Show("Tareas generadas e insertadas para la cuenta: " + cuenta);
         }
         
     }

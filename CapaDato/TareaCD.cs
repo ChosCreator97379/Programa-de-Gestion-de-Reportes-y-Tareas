@@ -69,5 +69,51 @@ namespace CapaDato
             }
             return dt;
         }
+        public static DataTable ObtenerTareasPorCuenta(string cuenta)
+        {
+            using (SqlConnection cnx = ConexionCD.sqlConnection())
+            {
+                string query = "SELECT Cuenta, Tareas_Que_Faltan, Fecha_Limite, Completado, Link FROM Tareas WHERE Cuenta = @Cuenta";
+                SqlCommand cmd = new SqlCommand(query, cnx);
+                cmd.Parameters.AddWithValue("@Cuenta", cuenta);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+        public static void InsertarTarea(string cuenta, string tarea, string fechaLimite, string completado, string link)
+        {
+            using (SqlConnection cnx = ConexionCD.sqlConnection())
+            {
+                cnx.Open();
+                string query = "INSERT INTO Tareas (Cuenta, Tareas_Que_Faltan, Fecha_Limite, Completado, Link) " +
+                               "VALUES (@Cuenta, @Tarea, @FechaLimite, @Completado, @Link)";
+
+                SqlCommand cmd = new SqlCommand(query, cnx);
+                cmd.Parameters.AddWithValue("@Cuenta", cuenta);
+                cmd.Parameters.AddWithValue("@Tarea", tarea);
+                cmd.Parameters.AddWithValue("@FechaLimite", fechaLimite);
+                cmd.Parameters.AddWithValue("@Completado", completado);
+                cmd.Parameters.AddWithValue("@Link", link);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public static void EliminarTarea(string cuenta, string tarea)
+        {
+            using (SqlConnection cnx = ConexionCD.sqlConnection())
+            {
+                cnx.Open();
+                string query = "DELETE FROM Tareas WHERE Cuenta = @Cuenta AND Tareas_Que_Faltan = @Tarea";
+
+                SqlCommand cmd = new SqlCommand(query, cnx);
+                cmd.Parameters.AddWithValue("@Cuenta", cuenta);
+                cmd.Parameters.AddWithValue("@Tarea", tarea);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

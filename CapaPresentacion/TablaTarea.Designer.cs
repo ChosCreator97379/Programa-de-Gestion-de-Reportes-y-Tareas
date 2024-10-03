@@ -33,13 +33,13 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnGenerarTabla = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnExportarExcel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -50,7 +50,7 @@
             this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTareas.Location = new System.Drawing.Point(12, 109);
             this.dgvTareas.Name = "dgvTareas";
-            this.dgvTareas.Size = new System.Drawing.Size(601, 659);
+            this.dgvTareas.Size = new System.Drawing.Size(601, 351);
             this.dgvTareas.TabIndex = 0;
             // 
             // txtValorBusqueda
@@ -72,13 +72,14 @@
             // 
             // btnGenerarTabla
             // 
+            this.btnGenerarTabla.BackColor = System.Drawing.Color.Gray;
             this.btnGenerarTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarTabla.Location = new System.Drawing.Point(641, 33);
             this.btnGenerarTabla.Name = "btnGenerarTabla";
             this.btnGenerarTabla.Size = new System.Drawing.Size(95, 66);
             this.btnGenerarTabla.TabIndex = 4;
             this.btnGenerarTabla.Text = "Generar Tabla Tarea";
-            this.btnGenerarTabla.UseVisualStyleBackColor = true;
+            this.btnGenerarTabla.UseVisualStyleBackColor = false;
             this.btnGenerarTabla.Click += new System.EventHandler(this.btnGenerarTabla_Click);
             // 
             // button3
@@ -90,23 +91,28 @@
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnEliminar
             // 
-            this.button4.Location = new System.Drawing.Point(641, 257);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(95, 66);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnEliminar.Location = new System.Drawing.Point(641, 257);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(95, 66);
+            this.btnEliminar.TabIndex = 6;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // button5
+            // btnExportarExcel
             // 
-            this.button5.Location = new System.Drawing.Point(747, 33);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(95, 66);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnExportarExcel.Location = new System.Drawing.Point(747, 33);
+            this.btnExportarExcel.Name = "btnExportarExcel";
+            this.btnExportarExcel.Size = new System.Drawing.Size(95, 66);
+            this.btnExportarExcel.TabIndex = 7;
+            this.btnExportarExcel.Text = "Descargar Excel";
+            this.btnExportarExcel.UseVisualStyleBackColor = true;
+            this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
             // 
             // groupBox1
             // 
@@ -120,6 +126,25 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Cuenta",
+            "",
+            "Tareas que faltan",
+            "",
+            "Fecha limite",
+            "",
+            "Completado",
+            "",
+            "link"});
+            this.comboBox1.Location = new System.Drawing.Point(21, 25);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 4;
+            this.comboBox1.Text = "Tipo de Busqueda";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
@@ -129,7 +154,7 @@
             this.archivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(854, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(845, 25);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -146,30 +171,19 @@
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Cuenta"});
-            this.comboBox1.Location = new System.Drawing.Point(21, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.Text = "Tipo de Busqueda";
             // 
             // TablaTarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(854, 793);
+            this.ClientSize = new System.Drawing.Size(845, 492);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnExportarExcel);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnGenerarTabla);
             this.Controls.Add(this.dgvTareas);
@@ -194,8 +208,8 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnGenerarTabla;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnExportarExcel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;

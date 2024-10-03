@@ -29,5 +29,17 @@ namespace CapaNegocio
         {
             return TareaCD.BuscarTareasPorCuenta(cuenta);
         }
+        public static DataTable ObtenerTareasPorCuenta(string cuenta)
+        {
+            return TareaCD.ObtenerTareasPorCuenta(cuenta);
+        }
+        public static void InsertarTarea(string cuenta, string tarea, string fechaLimite, string completado, string link)
+        {
+            TareaCD.InsertarTarea(cuenta, tarea, fechaLimite, completado, link); // Llama al método de la CapaDatos
+        }
+        public static void EliminarTarea(string cuenta, string tarea)
+        {
+            TareaCD.EliminarTarea(cuenta, tarea); // Llamada al método de la capa de datos
+        }
     }
 }
