@@ -23,19 +23,19 @@ namespace CapaNegocio
 
         private EmpleadoCD empleadoCD = new EmpleadoCD();
 
-        public void AgregarEmpleadoConDatos(string nombre, string apellido1, string apellido2, string dni, string telefono,
+        public void AgregarEmpleadoConDatos(string nombre1, string nombre2, string apellido1, string apellido2, string dni, string telefono,
             string correo, DateTime fechaNacimiento, string direccion, string distrito, string cargo, string area,
             string estadoLaboral, string nombreSupervisor, string universidadInstituto, string carrera)
         {
-            int empleadoId = empleadoCD.InsertarEmpleado(nombre, apellido1, apellido2, dni, telefono, correo, fechaNacimiento, direccion, distrito);
+            int empleadoId = empleadoCD.InsertarEmpleado(nombre1, nombre2, apellido1, apellido2, dni, telefono, correo, fechaNacimiento, direccion, distrito);
 
             empleadoCD.InsertarDatosLaborales(empleadoId, cargo, area, estadoLaboral, nombreSupervisor);
             empleadoCD.InsertarDatosAcademicos(empleadoId, universidadInstituto, carrera);
         }
 
-        public static void ActualizarEmpleado(int idEmpleado, string nombre, string apellido1, string apellido2, string dni, string telefono, string correo, string direccion, string distrito, DateTime fechaNacimiento, string cargo, string area, string estadoLaboral, string nombreSupervisor, string universidadInstituto, string carrera)
+        public static void ActualizarEmpleado(int idEmpleado, string nombre1, string nombre2, string apellido1, string apellido2, string dni, string telefono, string correo, string direccion, string distrito, DateTime fechaNacimiento, string cargo, string area, string estadoLaboral, string nombreSupervisor, string universidadInstituto, string carrera)
         {
-            EmpleadoCD.ActualizarEmpleado(idEmpleado, nombre, apellido1, apellido2, dni, telefono, correo, direccion, distrito, fechaNacimiento, cargo, area, estadoLaboral, nombreSupervisor, universidadInstituto, carrera);
+            EmpleadoCD.ActualizarEmpleado(idEmpleado, nombre1, nombre2, apellido1, apellido2, dni, telefono, correo, direccion, distrito, fechaNacimiento, cargo, area, estadoLaboral, nombreSupervisor, universidadInstituto, carrera);
         }
         public void EliminarEmpleado(int idEmpleado)
         {
@@ -46,6 +46,10 @@ namespace CapaNegocio
         {
             EmpleadoCD empleadoCD = new EmpleadoCD();
             return empleadoCD.BuscarEmpleado(criterio, valor);
+        }
+        public static DataTable ObtenerEmpleadosConCarreras()
+        {
+            return EmpleadoCD.ObtenerEmpleadosConCarreras();
         }
     }
 }

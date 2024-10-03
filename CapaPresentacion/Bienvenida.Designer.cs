@@ -33,9 +33,9 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeEntradaYSalidaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.administradorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrosDeTareaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.registrosDeTareaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -78,8 +78,8 @@
             this.registroDeEntradaYSalidaToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registroDeEntradaYSalidaToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.registroDeEntradaYSalidaToolStripMenuItem1.Name = "registroDeEntradaYSalidaToolStripMenuItem1";
-            this.registroDeEntradaYSalidaToolStripMenuItem1.Size = new System.Drawing.Size(193, 21);
-            this.registroDeEntradaYSalidaToolStripMenuItem1.Text = "Registro de Entrada y Salida";
+            this.registroDeEntradaYSalidaToolStripMenuItem1.Size = new System.Drawing.Size(124, 21);
+            this.registroDeEntradaYSalidaToolStripMenuItem1.Text = "Reporte de Tarea";
             this.registroDeEntradaYSalidaToolStripMenuItem1.Click += new System.EventHandler(this.registroDeEntradaYSalidaToolStripMenuItem1_Click);
             // 
             // administradorToolStripMenuItem1
@@ -90,6 +90,15 @@
             this.administradorToolStripMenuItem1.Size = new System.Drawing.Size(109, 21);
             this.administradorToolStripMenuItem1.Text = "Administrador";
             this.administradorToolStripMenuItem1.Click += new System.EventHandler(this.administradorToolStripMenuItem1_Click);
+            // 
+            // registrosDeTareaToolStripMenuItem
+            // 
+            this.registrosDeTareaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.registrosDeTareaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.registrosDeTareaToolStripMenuItem.Name = "registrosDeTareaToolStripMenuItem";
+            this.registrosDeTareaToolStripMenuItem.Size = new System.Drawing.Size(109, 21);
+            this.registrosDeTareaToolStripMenuItem.Text = "Tabla de Tarea";
+            this.registrosDeTareaToolStripMenuItem.Click += new System.EventHandler(this.registrosDeTareaToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -114,15 +123,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // registrosDeTareaToolStripMenuItem
-            // 
-            this.registrosDeTareaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.registrosDeTareaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.registrosDeTareaToolStripMenuItem.Name = "registrosDeTareaToolStripMenuItem";
-            this.registrosDeTareaToolStripMenuItem.Size = new System.Drawing.Size(133, 21);
-            this.registrosDeTareaToolStripMenuItem.Text = "Registros de Tarea";
-            this.registrosDeTareaToolStripMenuItem.Click += new System.EventHandler(this.registrosDeTareaToolStripMenuItem_Click);
             // 
             // Bienvenida
             // 

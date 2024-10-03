@@ -126,8 +126,11 @@ namespace CapaPresentacion
                 case "ID Empleado":
                     criterio = "e.ID";
                     break;
-                case "Nombre":
-                    criterio = "e.Nombre";
+                case "Nombre1":
+                    criterio = "e.Nombre1";
+                    break;
+                case "Nombre2":
+                    criterio = "e.Nombre2";
                     break;
                 case "DNI":
                     criterio = "e.DNI";

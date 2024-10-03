@@ -40,7 +40,8 @@ namespace CapaPresentacion
             try
             {
                 // Capturar los valores de los TextBoxes
-                string nombre = txtnombre.Text;
+                string nombre1 = txtnombre1.Text;
+                string nombre2 = txtnombre2.Text;
                 string apellido1 = txtapellido1.Text;
                 string apellido2 = txtapellido2.Text;
                 string dni = txtdni.Text;
@@ -59,10 +60,11 @@ namespace CapaPresentacion
                 string carrera = txtcarrera.Text;
 
                 // Llamada a la capa de negocios para insertar los datos
-                empleadoCN.AgregarEmpleadoConDatos(nombre, apellido1, apellido2, dni, telefono, correo, fechaNacimiento,
+                empleadoCN.AgregarEmpleadoConDatos(nombre1, nombre2, apellido1, apellido2, dni, telefono, correo, fechaNacimiento,
                     direccion, distrito, cargo, area, estadoLaboral, nombreSupervisor, universidadInstituto, carrera);
 
                 MessageBox.Show("Datos guardados exitosamente.");
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -78,6 +80,16 @@ namespace CapaPresentacion
         private void txtdni_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Añadirempleado_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

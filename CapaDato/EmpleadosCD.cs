@@ -15,7 +15,7 @@ namespace CapaDato
             using (SqlConnection cnx = ConexionCD.sqlConnection())
             {
                 string query = @"
-                SELECT e.Nombre, e.Apellido1, e.Apellido2, e.DNI, e.Telefono, e.CorreoElectronico, e.FechaNacimiento, 
+                SELECT e.Nombre1, e.Nombre2, e.Apellido1, e.Apellido2, e.DNI, e.Telefono, e.CorreoElectronico, e.FechaNacimiento, 
                        e.Direccion, e.Distrito,
                        dl.Cargo, dl.Area, dl.EstadoLaboral, dl.Nombre_Supervisor, 
                        da.UniversidadInstituto, da.Carrera
@@ -42,7 +42,7 @@ namespace CapaDato
                 try
                 {
                     string query = @"
-                SELECT e.ID, e.Nombre, e.Apellido1, e.Apellido2, e.DNI, e.Telefono, e.CorreoElectronico, e.FechaNacimiento, e.Direccion, e.Distrito,
+                SELECT e.ID, e.Nombre1, e.Nombre2, e.Apellido1, e.Apellido2, e.DNI, e.Telefono, e.CorreoElectronico, e.FechaNacimiento, e.Direccion, e.Distrito,
                        dl.Cargo, dl.Area, dl.EstadoLaboral, dl.Nombre_Supervisor,
                        da.UniversidadInstituto, da.Carrera
                 FROM Empleados e
@@ -68,7 +68,7 @@ namespace CapaDato
             return dt;
         }
 
-        public int InsertarEmpleado(string nombre, string apellido1, string apellido2, string dni, string telefono,
+        public int InsertarEmpleado(string nombre1, string nombre2, string apellido1, string apellido2, string dni, string telefono,
             string correo, DateTime fechaNacimiento, string direccion, string distrito)
         {
             using (SqlConnection conn = ConexionCD.sqlConnection())
@@ -79,13 +79,14 @@ namespace CapaDato
                 }
 
                 conn.Open();
-                string query = "INSERT INTO Empleados (Nombre, Apellido1, Apellido2, DNI, Telefono, CorreoElectronico, FechaNacimiento, Direccion, Distrito) " +
+                string query = "INSERT INTO Empleados (Nombre1, Nombre2, Apellido1, Apellido2, DNI, Telefono, CorreoElectronico, FechaNacimiento, Direccion, Distrito) " +
                                "VALUES (@Nombre, @Apellido1, @Apellido2, @DNI, @Telefono, @Correo, @FechaNacimiento, @Direccion, @Distrito); " +
                                "SELECT SCOPE_IDENTITY();";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Nombre", nombre);
+                    cmd.Parameters.AddWithValue("@Nombre1", nombre1);
+                    cmd.Parameters.AddWithValue("@Nombre2", nombre2);
                     cmd.Parameters.AddWithValue("@Apellido1", apellido1);
                     cmd.Parameters.AddWithValue("@Apellido2", apellido2);
                     cmd.Parameters.AddWithValue("@DNI", dni);
@@ -155,7 +156,7 @@ namespace CapaDato
             using (SqlConnection cnx = ConexionCD.sqlConnection())
             {
                 string query = @"
-                SELECT e.ID, e.Nombre, e.Apellido1, e.Apellido2, e.DNI, e.Telefono, e.CorreoElectronico, 
+                SELECT e.ID, e.Nombre1, e.Nombre2, e.Apellido1, e.Apellido2, e.DNI, e.Telefono, e.CorreoElectronico, 
                        e.FechaNacimiento, e.Direccion, e.Distrito,
                        dl.Cargo, dl.Area, dl.EstadoLaboral, dl.Nombre_Supervisor,
                        da.UniversidadInstituto, da.Carrera
@@ -174,13 +175,13 @@ namespace CapaDato
                 return dt;
             }
         }
-        public static void ActualizarEmpleado(int idEmpleado, string nombre, string apellido1, string apellido2, string dni, string telefono, string correo, string direccion, string distrito, DateTime fechaNacimiento, string cargo, string area, string estadoLaboral, string nombreSupervisor, string universidadInstituto, string carrera)
+        public static void ActualizarEmpleado(int idEmpleado, string nombre1, string nombre2, string apellido1, string apellido2, string dni, string telefono, string correo, string direccion, string distrito, DateTime fechaNacimiento, string cargo, string area, string estadoLaboral, string nombreSupervisor, string universidadInstituto, string carrera)
         {
             using (SqlConnection cnx = ConexionCD.sqlConnection())
             {
                 string query = @"
             UPDATE Empleados
-            SET Nombre = @Nombre, Apellido1 = @Apellido1, Apellido2 = @Apellido2, DNI = @DNI, 
+            SET Nombre1 = @Nombre1, Nombre2 = @Nombre2 , Apellido1 = @Apellido1, Apellido2 = @Apellido2, DNI = @DNI, 
                 Telefono = @Telefono, CorreoElectronico = @Correo, Direccion = @Direccion, Distrito = @Distrito, 
                 FechaNacimiento = @FechaNacimiento
             WHERE ID = @ID;
@@ -195,7 +196,8 @@ namespace CapaDato
 
                 SqlCommand cmd = new SqlCommand(query, cnx);
                 cmd.Parameters.AddWithValue("@ID", idEmpleado);
-                cmd.Parameters.AddWithValue("@Nombre", nombre);
+                cmd.Parameters.AddWithValue("@Nombre1", nombre1);
+                cmd.Parameters.AddWithValue("@Nombre2", nombre2);
                 cmd.Parameters.AddWithValue("@Apellido1", apellido1);
 
                 // Manejar los posibles valores nulos
@@ -259,7 +261,7 @@ namespace CapaDato
             DataTable dt = new DataTable();
             using (SqlConnection cnx = ConexionCD.sqlConnection())
             {
-                string query = @"SELECT e.ID, e.Nombre, e.Apellido1, e.Apellido2, e.DNI, e.Telefono, e.CorreoElectronico,
+                string query = @"SELECT e.ID, e.Nombre1, e.Nombre2, e.Apellido1, e.Apellido2, e.DNI, e.Telefono, e.CorreoElectronico,
                                 dl.Cargo, dl.Area, dl.EstadoLaboral, dl.Nombre_Supervisor, 
                                 da.UniversidadInstituto, da.Carrera
                          FROM Empleados e
@@ -273,6 +275,29 @@ namespace CapaDato
                 da.Fill(dt);
             }
             return dt;
+        }
+        public static DataTable ObtenerEmpleadosConCarreras()
+        {
+            using (SqlConnection cnx = ConexionCD.sqlConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(@"
+                        SELECT E.Nombre1, E.Nombre2, E.Apellido1, DA.Carrera
+                        FROM Empleados E
+                        INNER JOIN DatosAcademicos DA ON E.ID = DA.ID_Empleado", cnx);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dtEmpleados = new DataTable();
+                    adapter.Fill(dtEmpleados);
+                    return dtEmpleados;
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine("Error al obtener empleados: " + ex.Message);
+                    return null;
+                }
+            }
         }
 
     }

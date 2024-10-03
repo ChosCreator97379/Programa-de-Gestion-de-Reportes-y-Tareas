@@ -26,10 +26,32 @@ namespace CapaPresentacion
 
         private void Registro_E_S_Load(object sender, EventArgs e)
         {
-            
+            // Cargar los datos de la tabla Reportes
+            DataTable dtReportes = ReportesCN.ObtenerReportes();
+
+            if (dtReportes != null)
+            {
+                dataGridView.DataSource = dtReportes;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los reportes.");
+            }
+        }
+        private void CargarReportes()
+        {
+            DataTable dtReportes = ReportesCN.ObtenerReportes();
+
+            if (dtReportes != null)
+            {
+                dataGridView.DataSource = dtReportes;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los reportes.");
+            }
         }
 
-        
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -75,6 +97,23 @@ namespace CapaPresentacion
 
         private void groupBox2_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AñadirReporte formAgregar = new AñadirReporte();
+            formAgregar.FormClosed += new FormClosedEventHandler(FormAgregar_FormClosed); // Suscribirse al evento FormClosed
+            formAgregar.Show();
+        }
+        private void FormAgregar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Se llama a CargarReportes() para actualizar el DataGridView cuando se cierra el formulario de agregar reporte
+            CargarReportes();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

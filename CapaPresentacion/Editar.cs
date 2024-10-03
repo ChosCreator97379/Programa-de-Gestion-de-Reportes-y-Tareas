@@ -38,7 +38,8 @@ namespace CapaPresentacion
                 DataRow row = dt.Rows[0];
 
                 // Cargar datos en los TextBoxes (Asegúrate de tener estos controles en el formulario)
-                txtNombre.Text = row["Nombre"].ToString();
+                txtNombre1.Text = row["Nombre1"].ToString();
+                txtNombre2.Text = row["Nombre2"].ToString();
                 txtApellido1.Text = row["Apellido1"].ToString();
                 txtApellido2.Text = row["Apellido2"].ToString();
                 txtDni.Text = row["DNI"].ToString();
@@ -66,7 +67,8 @@ namespace CapaPresentacion
             try
             {
                 // Recoger los valores del formulario para actualizar
-                string nombre = txtNombre.Text;
+                string nombre1 = txtNombre1.Text;
+                string nombre2 = txtNombre2.Text;
                 string apellido1 = txtApellido1.Text;
                 string apellido2 = string.IsNullOrWhiteSpace(txtApellido2.Text) ? null : txtApellido2.Text;
                 string dni = txtDni.Text;
@@ -83,7 +85,7 @@ namespace CapaPresentacion
                 string carrera = string.IsNullOrWhiteSpace(txtCarrera.Text) ? null : txtCarrera.Text;
 
                 // Llamar a la capa de negocios para actualizar los datos del empleado
-                EmpleadoCN.ActualizarEmpleado(_idEmpleado, nombre, apellido1, apellido2, dni, telefono, correo, direccion, distrito, fechaNacimiento, cargo, area, estadoLaboral, nombreSupervisor, universidadInstituto, carrera);
+                EmpleadoCN.ActualizarEmpleado(_idEmpleado, nombre1, nombre2, apellido1, apellido2, dni, telefono, correo, direccion, distrito, fechaNacimiento, cargo, area, estadoLaboral, nombreSupervisor, universidadInstituto, carrera);
 
                 MessageBox.Show("Datos actualizados correctamente.");
                 this.Close();
@@ -167,6 +169,11 @@ namespace CapaPresentacion
         private void label13_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
