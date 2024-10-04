@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -60,7 +61,7 @@ namespace CapaDato
             DataTable dt = new DataTable();
             using (SqlConnection cnx = ConexionCD.sqlConnection())
             {
-                string query = "SELECT Cuenta, Tareas_Que_Faltan, Fecha_Limite, Completado, Link FROM Tareas WHERE Cuenta = @Cuenta";
+                string query = "SELECT ID, Cuenta, Tareas_Que_Faltan, Fecha_Limite, Completado, Link FROM Tareas WHERE Cuenta = @Cuenta";
                 SqlCommand cmd = new SqlCommand(query, cnx);
                 cmd.Parameters.AddWithValue("@Cuenta", cuenta);
 
@@ -73,7 +74,7 @@ namespace CapaDato
         {
             using (SqlConnection cnx = ConexionCD.sqlConnection())
             {
-                string query = "SELECT Cuenta, Tareas_Que_Faltan, Fecha_Limite, Completado, Link FROM Tareas WHERE Cuenta = @Cuenta";
+                string query = "SELECT ID, Cuenta, Tareas_Que_Faltan, Fecha_Limite, Completado, Link FROM Tareas WHERE Cuenta = @Cuenta";
                 SqlCommand cmd = new SqlCommand(query, cnx);
                 cmd.Parameters.AddWithValue("@Cuenta", cuenta);
 
@@ -115,5 +116,63 @@ namespace CapaDato
                 cmd.ExecuteNonQuery();
             }
         }
+        public static DataTable ObtenerCuentasRelacionadas(string cuentaBase)
+        {
+            using (SqlConnection cnx = ConexionCD.sqlConnection())
+            {
+                // Cambia la consulta según tu lógica de "cuentas relacionadas"
+                string query = "SELECT DISTINCT Cuenta FROM Tareas WHERE Cuenta = @CuentaBase";
+                SqlCommand cmd = new SqlCommand(query, cnx);
+                cmd.Parameters.AddWithValue("@CuentaBase", cuentaBase);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+        /*
+        public static bool ActualizarTarea(string cuenta, string tareaQueFaltan, string fechaLimite, string completado, string link)
+        {
+            using (SqlConnection cnx = ConexionCD.sqlConnection())
+            {
+                cnx.Open();
+                string query = "UPDATE Tareas SET Fecha_Limite = @FechaLimite, Completado = @Completado, Link = @Link " +
+                       "WHERE Cuenta = @Cuenta AND Tareas_Que_Faltan = @TareaQueFaltan";
+
+                using (SqlCommand cmd = new SqlCommand(query, cnx))
+                {
+                    cmd.Parameters.AddWithValue("@Cuenta", cuenta);
+                    cmd.Parameters.AddWithValue("@TareaQueFaltan", tareaQueFaltan);
+                    cmd.Parameters.AddWithValue("@FechaLimite", fechaLimite);
+                    cmd.Parameters.AddWithValue("@Completado", completado);
+                    cmd.Parameters.AddWithValue("@Link", link);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0; // Retorna true si se actualizó al menos una fila
+                }
+            }
+        }
+        */
+
+        public static void ActualizarTarea(int id, string fechaLimite, string completado, string link)
+        {
+            using (SqlConnection cnx = ConexionCD.sqlConnection())
+            {
+                string query = "UPDATE Tareas SET Fecha_Limite = @FechaLimite, Completado = @Completado, Link = @Link " +
+                               "WHERE ID = @ID"; // Cambia 'Cuenta' por 'ID'
+
+                SqlCommand cmd = new SqlCommand(query, cnx);
+                cmd.Parameters.AddWithValue("@FechaLimite", fechaLimite);
+                cmd.Parameters.AddWithValue("@Completado", completado);
+                cmd.Parameters.AddWithValue("@Link", link);
+                cmd.Parameters.AddWithValue("@ID", id); // Agrega el parámetro ID
+
+                cnx.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
     }
 }

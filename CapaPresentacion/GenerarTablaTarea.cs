@@ -31,18 +31,21 @@ namespace CapaPresentacion
                 "-mockup/septiembre",
                 "-las plantillas",
                 "-plan de publicaciones/septiembre",
+                "dia de produccion/setiembre",
+                "hoja de designacion",
                 "-hora de publicaciones",
                 "día de publicaciones",
                 "administracion de la cuenta"
+                
             };
 
             List<string> fechasLimite = new List<string>()
             {
                 "", "", "", "", "",
-                "", "", "", ""
+                "", "", "", "","",""
             };
 
-            List<string> completado = new List<string>() { "no", "no", "no", "no", "no", "no", "no", "no", "no" };
+            List<string> completado = new List<string>() { "no", "no", "no", "no", "no", "no", "no", "no", "no","no","no" };
             List<string> links = new List<string>()
             {
                 "",
@@ -53,7 +56,10 @@ namespace CapaPresentacion
                 "",
                 "",
                 "",
+                "",
+                "",
                 ""
+
             };
 
             // Insertar cada tarea en la base de datos

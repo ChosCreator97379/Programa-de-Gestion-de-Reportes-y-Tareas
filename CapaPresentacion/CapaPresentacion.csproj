@@ -188,6 +188,12 @@
     <Compile Include="EditarEmpleado.Designer.cs">
       <DependentUpon>EditarEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarTabla.Designer.cs">
+      <DependentUpon>EditarTabla.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenerarTablaTarea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarEmpleado.resx">
       <DependentUpon>EditarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarTabla.resx">
+      <DependentUpon>EditarTabla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarTablaTarea.resx">
       <DependentUpon>GenerarTablaTarea.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using CapaNegocio;
+﻿using CapaDato;
+using CapaNegocio;
 using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
@@ -145,6 +146,31 @@ namespace CapaPresentacion
                     MessageBox.Show("Datos exportados correctamente a Excel.");
                 }
             }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dgvTareas.SelectedRows.Count > 0)
+            {
+                // Obtener la cuenta seleccionada
+                string cuentaSeleccionada = dgvTareas.SelectedRows[0].Cells["Cuenta"].Value.ToString();
+
+                // Crear una instancia del formulario de edición y pasar la cuenta seleccionada
+                EditarTabla Editar = new EditarTabla(cuentaSeleccionada);
+
+                // Mostrar el formulario de edición
+                Editar.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        public void CargarDatos()
+        {
+            // Lógica para cargar los datos en el DataGridView
+            DataTable tareas = TareaCN.ObtenerTareas(); // Asegúrate de que este método obtenga todas las tareas actualizadas
+            dgvTareas.DataSource = tareas;
         }
     }
 }

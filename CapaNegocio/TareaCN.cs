@@ -41,5 +41,13 @@ namespace CapaNegocio
         {
             TareaCD.EliminarTarea(cuenta, tarea); // Llamada al método de la capa de datos
         }
+        public static DataTable ObtenerCuentasRelacionadas(string cuentaBase)
+        {
+            return TareaCD.ObtenerCuentasRelacionadas(cuentaBase);
+        }
+        public static void ActualizarTarea(int id, string fechaLimite, string completado, string link)
+        {
+            TareaCD.ActualizarTarea(id, fechaLimite, completado, link);
+        }
     }
 }

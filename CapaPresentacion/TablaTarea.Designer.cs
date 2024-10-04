@@ -32,7 +32,7 @@
             this.txtValorBusqueda = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnGenerarTabla = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnExportarExcel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -82,14 +82,17 @@
             this.btnGenerarTabla.UseVisualStyleBackColor = false;
             this.btnGenerarTabla.Click += new System.EventHandler(this.btnGenerarTabla_Click);
             // 
-            // button3
+            // btnEditar
             // 
-            this.button3.Location = new System.Drawing.Point(641, 143);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 66);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEditar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnEditar.Location = new System.Drawing.Point(641, 143);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(95, 66);
+            this.btnEditar.TabIndex = 5;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -106,12 +109,13 @@
             // 
             // btnExportarExcel
             // 
+            this.btnExportarExcel.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnExportarExcel.Location = new System.Drawing.Point(747, 33);
             this.btnExportarExcel.Name = "btnExportarExcel";
             this.btnExportarExcel.Size = new System.Drawing.Size(95, 66);
             this.btnExportarExcel.TabIndex = 7;
             this.btnExportarExcel.Text = "Descargar Excel";
-            this.btnExportarExcel.UseVisualStyleBackColor = true;
+            this.btnExportarExcel.UseVisualStyleBackColor = false;
             this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
             // 
             // groupBox1
@@ -184,7 +188,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExportarExcel);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGenerarTabla);
             this.Controls.Add(this.dgvTareas);
             this.Controls.Add(this.menuStrip1);
@@ -207,7 +211,7 @@
         private System.Windows.Forms.TextBox txtValorBusqueda;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnGenerarTabla;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnExportarExcel;
         private System.Windows.Forms.GroupBox groupBox1;
