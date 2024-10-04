@@ -55,11 +55,9 @@
             this.groupBox2.Controls.Add(this.dataGridView);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.groupBox2.Location = new System.Drawing.Point(16, 15);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1795, 830);
+            this.groupBox2.Size = new System.Drawing.Size(1346, 674);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de Empleados";
@@ -72,10 +70,9 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEliminar.Location = new System.Drawing.Point(1660, 43);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(1245, 35);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 20;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -88,10 +85,9 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnEditar.Location = new System.Drawing.Point(1552, 43);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(1164, 35);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(100, 28);
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 19;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -104,10 +100,9 @@
             this.btnAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAñadir.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAñadir.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAñadir.Location = new System.Drawing.Point(1444, 43);
-            this.btnAñadir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAñadir.Location = new System.Drawing.Point(1083, 35);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(100, 28);
+            this.btnAñadir.Size = new System.Drawing.Size(75, 23);
             this.btnAñadir.TabIndex = 18;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = false;
@@ -120,10 +115,9 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnActualizar.Location = new System.Drawing.Point(413, 44);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnActualizar.Location = new System.Drawing.Point(310, 36);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 17;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -136,10 +130,9 @@
             this.btnBuscarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarRegistro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarRegistro.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnBuscarRegistro.Location = new System.Drawing.Point(1119, 43);
-            this.btnBuscarRegistro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarRegistro.Location = new System.Drawing.Point(839, 35);
             this.btnBuscarRegistro.Name = "btnBuscarRegistro";
-            this.btnBuscarRegistro.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscarRegistro.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarRegistro.TabIndex = 16;
             this.btnBuscarRegistro.Text = "Buscar";
             this.btnBuscarRegistro.UseVisualStyleBackColor = false;
@@ -148,10 +141,9 @@
             // txtValorBusqueda
             // 
             this.txtValorBusqueda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorBusqueda.Location = new System.Drawing.Point(711, 43);
-            this.txtValorBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValorBusqueda.Location = new System.Drawing.Point(533, 35);
             this.txtValorBusqueda.Name = "txtValorBusqueda";
-            this.txtValorBusqueda.Size = new System.Drawing.Size(399, 29);
+            this.txtValorBusqueda.Size = new System.Drawing.Size(300, 25);
             this.txtValorBusqueda.TabIndex = 16;
             // 
             // cmbCriterioBusqueda
@@ -177,10 +169,9 @@
             "Universidad o Instituto",
             "",
             "Carrera"});
-            this.cmbCriterioBusqueda.Location = new System.Drawing.Point(521, 43);
-            this.cmbCriterioBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbCriterioBusqueda.Location = new System.Drawing.Point(391, 35);
             this.cmbCriterioBusqueda.Name = "cmbCriterioBusqueda";
-            this.cmbCriterioBusqueda.Size = new System.Drawing.Size(180, 29);
+            this.cmbCriterioBusqueda.Size = new System.Drawing.Size(136, 25);
             this.cmbCriterioBusqueda.TabIndex = 16;
             this.cmbCriterioBusqueda.Text = "Tipo de Busqueda";
             // 
@@ -197,22 +188,20 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView.Location = new System.Drawing.Point(24, 94);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView.Location = new System.Drawing.Point(18, 76);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
-            this.dataGridView.Size = new System.Drawing.Size(1747, 716);
+            this.dataGridView.Size = new System.Drawing.Size(1310, 582);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // Administrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(1827, 922);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.groupBox2);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Administrador";
             this.Text = "Administrador";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
