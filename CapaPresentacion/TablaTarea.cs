@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 
 namespace CapaPresentacion
 {
@@ -74,76 +75,79 @@ namespace CapaPresentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvTareas.SelectedRows.Count > 0) // Verifica que se haya seleccionado una fila
+            if (dgvTareas.SelectedRows.Count > 0) // Verifica que haya al menos una fila seleccionada
             {
-                // Obtén la cuenta y la tarea de la fila seleccionada
-                string cuenta = dgvTareas.SelectedRows[0].Cells["Cuenta"].Value.ToString();
-                string tarea = dgvTareas.SelectedRows[0].Cells["Tareas_Que_Faltan"].Value.ToString();
-
                 // Confirmar la eliminación
-                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar esta tarea?",
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar las tareas seleccionadas?",
                                                       "Confirmar eliminación",
                                                       MessageBoxButtons.YesNo,
                                                       MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    // Elimina la tarea de la base de datos
-                    TareaCN.EliminarTarea(cuenta, tarea);
+                    // Recorre las filas seleccionadas en reversa para eliminar sin conflictos
+                    foreach (DataGridViewRow row in dgvTareas.SelectedRows)
+                    {
+                        if (row.Cells["Cuenta"].Value != null && row.Cells["Tareas_Que_Faltan"].Value != null)
+                        {
+                            string cuenta = row.Cells["Cuenta"].Value.ToString();
+                            string tarea = row.Cells["Tareas_Que_Faltan"].Value.ToString();
 
-                    // Elimina la fila seleccionada del DataGridView
-                    dgvTareas.Rows.RemoveAt(dgvTareas.SelectedRows[0].Index);
+                            // Elimina la tarea de la base de datos
+                            TareaCN.EliminarTarea(cuenta, tarea);
 
-                    MessageBox.Show("Tarea eliminada correctamente.");
+                            // Elimina la fila seleccionada del DataGridView
+                            dgvTareas.Rows.RemoveAt(row.Index);
+                        }
+                    }
+
+                    MessageBox.Show("Tareas eliminadas correctamente.");
                 }
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona una fila para eliminar.");
+                MessageBox.Show("Por favor, selecciona al menos una fila para eliminar.");
             }
         }
 
         private void btnExportarExcel_Click(object sender, EventArgs e)
         {
-            // Abrir un cuadro de diálogo para guardar el archivo Excel
-            using (SaveFileDialog sfd = new SaveFileDialog())
+            // Crear un archivo de Excel en memoria
+            using (var workbook = new XLWorkbook())
             {
-                sfd.Filter = "Excel Workbook|*.xlsx";
-                sfd.Title = "Guardar archivo Excel";
-                sfd.FileName = "Tareas.xlsx";
+                // Crear una hoja
+                var worksheet = workbook.Worksheets.Add("Tareas");
 
-                if (sfd.ShowDialog() == DialogResult.OK)
+                // Agregar encabezados
+                for (int i = 1; i < dgvTareas.Columns.Count + 1; i++)
                 {
-                    using (ExcelPackage excel = new ExcelPackage())
+                    worksheet.Cell(1, i).Value = dgvTareas.Columns[i - 1].HeaderText;
+                }
+
+                // Agregar los datos del DataGridView
+                for (int i = 0; i < dgvTareas.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvTareas.Columns.Count; j++)
                     {
-                        // Crear una hoja de cálculo
-                        var workSheet = excel.Workbook.Worksheets.Add("Tareas");
+                        worksheet.Cell(i + 2, j + 1).Value = dgvTareas.Rows[i].Cells[j].Value?.ToString();
+                    }
+                }
 
-                        // Establecer el encabezado
-                        workSheet.Cells[1, 1].Value = "Cuenta";
-                        workSheet.Cells[1, 2].Value = "Tareas Que Faltan";
-                        workSheet.Cells[1, 3].Value = "Fecha Limite";
-                        workSheet.Cells[1, 4].Value = "Completado";
-                        workSheet.Cells[1, 5].Value = "Link";
+                // Dialogo para guardar el archivo
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files|*.xlsx";
+                saveFileDialog.Title = "Guardar como Excel";
+                saveFileDialog.FileName = "Tareas.xlsx";
 
-                        // Agregar los datos del DataGridView
-                        for (int i = 0; i < dgvTareas.Rows.Count; i++)
-                        {
-                            for (int j = 0; j < dgvTareas.Columns.Count; j++)
-                            {
-                                workSheet.Cells[i + 2, j + 1].Value = dgvTareas.Rows[i].Cells[j].Value.ToString();
-                            }
-                        }
-
-                        // Ajustar el ancho de las columnas
-                        workSheet.Cells.AutoFitColumns();
-
-                        // Guardar el archivo Excel
-                        FileInfo excelFile = new FileInfo(sfd.FileName);
-                        excel.SaveAs(excelFile);
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Guardar el archivo Excel en la ruta seleccionada
+                    using (var stream = new FileStream(saveFileDialog.FileName, FileMode.Create, FileAccess.Write))
+                    {
+                        workbook.SaveAs(stream);
                     }
 
-                    MessageBox.Show("Datos exportados correctamente a Excel.");
+                    MessageBox.Show("Datos exportados a Excel exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
