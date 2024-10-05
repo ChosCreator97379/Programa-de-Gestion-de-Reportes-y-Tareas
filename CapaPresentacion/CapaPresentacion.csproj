@@ -182,11 +182,23 @@
     <Compile Include="Bienvenida.Designer.cs">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </Compile>
+    <Compile Include="DescargaExcelReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DescargaExcelReporte.Designer.cs">
+      <DependentUpon>DescargaExcelReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditarEmpleado.Designer.cs">
       <DependentUpon>EditarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarReporte.Designer.cs">
+      <DependentUpon>EditarReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="EditarTabla.cs">
       <SubType>Form</SubType>
