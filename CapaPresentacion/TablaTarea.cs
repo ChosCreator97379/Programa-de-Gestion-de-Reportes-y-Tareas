@@ -112,46 +112,25 @@ namespace CapaPresentacion
 
         private void btnExportarExcel_Click(object sender, EventArgs e)
         {
-            // Crear un archivo de Excel en memoria
-            using (var workbook = new XLWorkbook())
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
             {
-                // Crear una hoja
-                var worksheet = workbook.Worksheets.Add("Tareas");
-
-                // Agregar encabezados
-                for (int i = 1; i < dgvTareas.Columns.Count + 1; i++)
-                {
-                    worksheet.Cell(1, i).Value = dgvTareas.Columns[i - 1].HeaderText;
-                }
-
-                // Agregar los datos del DataGridView
-                for (int i = 0; i < dgvTareas.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dgvTareas.Columns.Count; j++)
-                    {
-                        worksheet.Cell(i + 2, j + 1).Value = dgvTareas.Rows[i].Cells[j].Value?.ToString();
-                    }
-                }
-
-                // Dialogo para guardar el archivo
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "Excel Files|*.xlsx";
-                saveFileDialog.Title = "Guardar como Excel";
-                saveFileDialog.FileName = "Tareas.xlsx";
+                saveFileDialog.Title = "Guardar archivo Excel";
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Guardar el archivo Excel en la ruta seleccionada
-                    using (var stream = new FileStream(saveFileDialog.FileName, FileMode.Create, FileAccess.Write))
-                    {
-                        workbook.SaveAs(stream);
-                    }
+                    string filePath = saveFileDialog.FileName;
+                    ExportarDatosAExcel(filePath);
 
-                    MessageBox.Show("Datos exportados a Excel exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Eliminar todas las tareas después de la exportación
+                    TareaCN.EliminarTodasLasTareas();
+
+                    // Limpiar el DataGridView
+                    dgvTareas.DataSource = null;
+                    MessageBox.Show("Datos exportados y eliminados correctamente.", "Exportar Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dgvTareas.SelectedRows.Count > 0)
@@ -175,6 +154,66 @@ namespace CapaPresentacion
             // Lógica para cargar los datos en el DataGridView
             DataTable tareas = TareaCN.ObtenerTareas(); // Asegúrate de que este método obtenga todas las tareas actualizadas
             dgvTareas.DataSource = tareas;
+        }
+        private void ExportarDatosAExcel(string filePath)
+        {
+            using (XLWorkbook workbook = new XLWorkbook())
+            {
+                // Crear la hoja de Excel
+                IXLWorksheet worksheet = workbook.Worksheets.Add("Tareas");
+
+                // Inicializar fila para las tablas
+                int rowIndex = 1;
+
+                // Exportar datos de DataGridView a Excel
+                ExportarDataGridViewAExcel(worksheet, dgvTareas, ref rowIndex);
+
+                // Guardar el archivo en la ruta especificada
+                workbook.SaveAs(filePath);
+
+                MessageBox.Show("Exportación completada correctamente.", "Exportar Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void ExportarDataGridViewAExcel(IXLWorksheet worksheet, DataGridView dgv, ref int rowIndex)
+        {
+            // Aplicar título de la tabla
+            worksheet.Cell(rowIndex, 1).Value = "Tareas";
+            worksheet.Cell(rowIndex, 1).Style.Font.Bold = true;
+            worksheet.Cell(rowIndex, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+            worksheet.Range(rowIndex, 1, rowIndex, dgv.Columns.Count).Merge();
+            rowIndex++;
+
+            // Encabezados de columnas (sin mostrar la columna de ID)
+            for (int i = 0; i < dgv.Columns.Count; i++)
+            {
+                if (dgv.Columns[i].Name != "ID") // Ocultar columna ID
+                {
+                    worksheet.Cell(rowIndex, i + 1).Value = dgv.Columns[i].HeaderText;
+                    worksheet.Cell(rowIndex, i + 1).Style.Font.Bold = true;
+                    worksheet.Cell(rowIndex, i + 1).Style.Fill.BackgroundColor = XLColor.LightGray;
+                    worksheet.Cell(rowIndex, i + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+                }
+            }
+            rowIndex++;
+
+            // Filas de datos
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgv.Columns.Count; j++)
+                {
+                    if (dgv.Columns[j].Name != "ID") // Ocultar columna ID
+                    {
+                        worksheet.Cell(rowIndex + i, j + 1).Value = dgv.Rows[i].Cells[j].Value?.ToString();
+                        worksheet.Cell(rowIndex + i, j + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+                    }
+                }
+            }
+
+            // Ajustar tamaño de columnas automáticamente
+            worksheet.Columns().AdjustToContents();
+
+            // Añadir espacio antes de la próxima tabla, si hay más
+            rowIndex += dgv.Rows.Count + 2;
         }
     }
 }

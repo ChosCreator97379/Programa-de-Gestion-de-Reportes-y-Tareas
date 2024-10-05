@@ -173,6 +173,16 @@ namespace CapaDato
                 cmd.ExecuteNonQuery();
             }
         }
+        public static void EliminarTodasLasTareas()
+        {
+            using (SqlConnection cnx = ConexionCD.sqlConnection())
+            {
+                cnx.Open();
+                string query = "DELETE FROM Tareas"; // Borra todas las filas de la tabla Tareas
 
+                SqlCommand cmd = new SqlCommand(query, cnx);
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

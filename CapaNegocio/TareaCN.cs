@@ -49,5 +49,9 @@ namespace CapaNegocio
         {
             TareaCD.ActualizarTarea(id, fechaLimite, completado, link);
         }
+        public static void EliminarTodasLasTareas()
+        {
+            TareaCD.EliminarTodasLasTareas(); // Llama al método de la capa de datos
+        }
     }
 }
