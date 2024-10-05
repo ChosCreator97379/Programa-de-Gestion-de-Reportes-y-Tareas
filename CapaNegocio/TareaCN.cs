@@ -11,23 +11,9 @@ namespace CapaNegocio
 {
     public class TareaCN
     {
-        public static void InsertarNuevaCuenta(string cuenta)
-        {
-            TareaCD.InsertarNuevaCuenta(cuenta);
-        }
-
-        public static bool VerificarCuentaExiste(string cuenta)
-        {
-            return TareaCD.VerificarCuentaExiste(cuenta);
-        }
-
         public static DataTable ObtenerTareas()
         {
             return TareaCD.ObtenerTareas();
-        }
-        public static DataTable BuscarTareasPorCuenta(string cuenta)
-        {
-            return TareaCD.BuscarTareasPorCuenta(cuenta);
         }
         public static DataTable ObtenerTareasPorCuenta(string cuenta)
         {
@@ -49,9 +35,18 @@ namespace CapaNegocio
         {
             TareaCD.ActualizarTarea(id, fechaLimite, completado, link);
         }
-        public static void EliminarTodasLasTareas()
+        public static void LimpiarBaseDeDatosPorCuentas(List<string> cuentas)
         {
-            TareaCD.EliminarTodasLasTareas(); // Llama al método de la capa de datos
+            TareaCD.LimpiarTablasPorCuenta(cuentas); // Llamada al método de la capa de datos
+        }
+
+        public static List<string> ObtenerTodasLasCuentas()
+        {
+            return TareaCD.ObtenerTodasLasCuentas(); // Método que obtiene todas las cuentas de la base de datos
+        }
+        public static DataTable ObtenerTareasPorCuentas(string cuenta)
+        {
+            return TareaCD.ObtenerTareasPorCuentas(cuenta);
         }
     }
 }

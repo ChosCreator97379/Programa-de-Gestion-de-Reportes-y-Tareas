@@ -173,16 +173,54 @@ namespace CapaDato
                 cmd.ExecuteNonQuery();
             }
         }
-        public static void EliminarTodasLasTareas()
+        public static void LimpiarTablasPorCuenta(List<string> cuentas)
         {
             using (SqlConnection cnx = ConexionCD.sqlConnection())
             {
                 cnx.Open();
-                string query = "DELETE FROM Tareas"; // Borra todas las filas de la tabla Tareas
-
-                SqlCommand cmd = new SqlCommand(query, cnx);
-                cmd.ExecuteNonQuery();
+                foreach (string cuenta in cuentas)
+                {
+                    string query = "DELETE FROM Tareas WHERE Cuenta = @Cuenta";
+                    SqlCommand cmd = new SqlCommand(query, cnx);
+                    cmd.Parameters.AddWithValue("@Cuenta", cuenta);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
+        public static List<string> ObtenerTodasLasCuentas()
+        {
+            List<string> cuentas = new List<string>();
+
+            using (SqlConnection cnx = ConexionCD.sqlConnection())
+            {
+                cnx.Open();
+                string query = "SELECT DISTINCT Cuenta FROM Tareas";
+                SqlCommand cmd = new SqlCommand(query, cnx);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cuentas.Add(reader["Cuenta"].ToString());
+                }
+            }
+
+            return cuentas;
+        }
+        public static DataTable ObtenerTareasPorCuentas(string cuenta)
+        {
+            using (SqlConnection cnx = ConexionCD.sqlConnection())
+            {
+                string query = "SELECT Cuenta, Tareas_Que_Faltan, Fecha_Limite, Completado, Link FROM Tareas WHERE Cuenta = @Cuenta";
+                SqlCommand cmd = new SqlCommand(query, cnx);
+                cmd.Parameters.AddWithValue("@Cuenta", cuenta);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+
     }
 }

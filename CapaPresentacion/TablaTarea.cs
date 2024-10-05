@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
+using System.Data.SqlClient;
 
 namespace CapaPresentacion
 {
@@ -112,23 +113,21 @@ namespace CapaPresentacion
 
         private void btnExportarExcel_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files|*.xlsx";
+            saveFileDialog.Title = "Guardar tabla como Excel";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                saveFileDialog.Filter = "Excel Files|*.xlsx";
-                saveFileDialog.Title = "Guardar archivo Excel";
+                string filePath = saveFileDialog.FileName;
 
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string filePath = saveFileDialog.FileName;
-                    ExportarDatosAExcel(filePath);
+                // Lista de cuentas exportadas
+                List<string> cuentasExportadas = ExportarMultiplesTablasAExcel(filePath);
 
-                    // Eliminar todas las tareas después de la exportación
-                    TareaCN.EliminarTodasLasTareas();
+                MessageBox.Show("Las tablas se exportaron correctamente.");
 
-                    // Limpiar el DataGridView
-                    dgvTareas.DataSource = null;
-                    MessageBox.Show("Datos exportados y eliminados correctamente.", "Exportar Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                // Limpia las tablas de la base de datos de las cuentas exportadas
+                TareaCN.LimpiarBaseDeDatosPorCuentas(cuentasExportadas);
             }
         }
         private void btnEditar_Click(object sender, EventArgs e)
@@ -155,65 +154,56 @@ namespace CapaPresentacion
             DataTable tareas = TareaCN.ObtenerTareas(); // Asegúrate de que este método obtenga todas las tareas actualizadas
             dgvTareas.DataSource = tareas;
         }
-        private void ExportarDatosAExcel(string filePath)
+        private List<string> ExportarMultiplesTablasAExcel(string filePath)
         {
-            using (XLWorkbook workbook = new XLWorkbook())
+            List<string> cuentasExportadas = new List<string>();
+
+            using (var workbook = new XLWorkbook())
             {
-                // Crear la hoja de Excel
-                IXLWorksheet worksheet = workbook.Worksheets.Add("Tareas");
+                // Obtener todas las cuentas
+                List<string> cuentas = TareaCN.ObtenerTodasLasCuentas();
 
-                // Inicializar fila para las tablas
-                int rowIndex = 1;
-
-                // Exportar datos de DataGridView a Excel
-                ExportarDataGridViewAExcel(worksheet, dgvTareas, ref rowIndex);
-
-                // Guardar el archivo en la ruta especificada
-                workbook.SaveAs(filePath);
-
-                MessageBox.Show("Exportación completada correctamente.", "Exportar Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-        private void ExportarDataGridViewAExcel(IXLWorksheet worksheet, DataGridView dgv, ref int rowIndex)
-        {
-            // Aplicar título de la tabla
-            worksheet.Cell(rowIndex, 1).Value = "Tareas";
-            worksheet.Cell(rowIndex, 1).Style.Font.Bold = true;
-            worksheet.Cell(rowIndex, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-            worksheet.Range(rowIndex, 1, rowIndex, dgv.Columns.Count).Merge();
-            rowIndex++;
-
-            // Encabezados de columnas (sin mostrar la columna de ID)
-            for (int i = 0; i < dgv.Columns.Count; i++)
-            {
-                if (dgv.Columns[i].Name != "ID") // Ocultar columna ID
+                foreach (string cuenta in cuentas)
                 {
-                    worksheet.Cell(rowIndex, i + 1).Value = dgv.Columns[i].HeaderText;
-                    worksheet.Cell(rowIndex, i + 1).Style.Font.Bold = true;
-                    worksheet.Cell(rowIndex, i + 1).Style.Fill.BackgroundColor = XLColor.LightGray;
-                    worksheet.Cell(rowIndex, i + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
-                }
-            }
-            rowIndex++;
-
-            // Filas de datos
-            for (int i = 0; i < dgv.Rows.Count; i++)
-            {
-                for (int j = 0; j < dgv.Columns.Count; j++)
-                {
-                    if (dgv.Columns[j].Name != "ID") // Ocultar columna ID
+                    DataTable dt = TareaCN.ObtenerTareasPorCuentas(cuenta);
+                    if (dt.Rows.Count > 0)
                     {
-                        worksheet.Cell(rowIndex + i, j + 1).Value = dgv.Rows[i].Cells[j].Value?.ToString();
-                        worksheet.Cell(rowIndex + i, j + 1).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+                        // Añadir la cuenta a la lista de cuentas exportadas
+                        cuentasExportadas.Add(cuenta);
+
+                        // Crear una hoja por cuenta
+                        var hoja = workbook.Worksheets.Add(cuenta);
+
+                        // Título de las columnas
+                        hoja.Cell(1, 1).Value = "Cuenta";
+                        hoja.Cell(1, 2).Value = "Tareas_Que_Faltan";
+                        hoja.Cell(1, 3).Value = "Fecha_Limite";
+                        hoja.Cell(1, 4).Value = "Completado";
+                        hoja.Cell(1, 5).Value = "Link";
+
+                        // Rellenar datos
+                        int fila = 2;
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            hoja.Cell(fila, 1).Value = row["Cuenta"].ToString();
+                            hoja.Cell(fila, 2).Value = row["Tareas_Que_Faltan"].ToString();
+                            hoja.Cell(fila, 3).Value = row["Fecha_Limite"].ToString();
+                            hoja.Cell(fila, 4).Value = row["Completado"].ToString();
+                            hoja.Cell(fila, 5).Value = row["Link"].ToString();
+                            fila++;
+                        }
+
+                        // Ajustar el contenido de las celdas
+                        hoja.Columns().AdjustToContents();
                     }
                 }
+
+                // Guardar el archivo
+                workbook.SaveAs(filePath);
             }
 
-            // Ajustar tamaño de columnas automáticamente
-            worksheet.Columns().AdjustToContents();
-
-            // Añadir espacio antes de la próxima tabla, si hay más
-            rowIndex += dgv.Rows.Count + 2;
+            return cuentasExportadas; // Devolver las cuentas exportadas
         }
+        
     }
 }
