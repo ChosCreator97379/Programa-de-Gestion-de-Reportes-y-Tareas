@@ -73,9 +73,9 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.Window;
-            this.button4.Location = new System.Drawing.Point(1229, 34);
+            this.button4.Location = new System.Drawing.Point(1210, 28);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(85, 35);
             this.button4.TabIndex = 21;
             this.button4.Text = "...";
             this.button4.UseVisualStyleBackColor = false;
@@ -87,9 +87,9 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.button3.Location = new System.Drawing.Point(941, 34);
+            this.button3.Location = new System.Drawing.Point(921, 28);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(91, 35);
             this.button3.TabIndex = 20;
             this.button3.Text = "Añadir";
             this.button3.UseVisualStyleBackColor = false;
@@ -102,9 +102,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.Location = new System.Drawing.Point(1124, 34);
+            this.button2.Location = new System.Drawing.Point(1112, 28);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(92, 35);
             this.button2.TabIndex = 19;
             this.button2.Text = "Eliminar";
             this.button2.UseVisualStyleBackColor = false;
@@ -116,9 +116,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(1031, 34);
+            this.button1.Location = new System.Drawing.Point(1018, 28);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(88, 35);
             this.button1.TabIndex = 18;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = false;
@@ -130,9 +130,9 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnActualizar.Location = new System.Drawing.Point(63, 35);
+            this.btnActualizar.Location = new System.Drawing.Point(51, 28);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(87, 35);
             this.btnActualizar.TabIndex = 17;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -145,9 +145,9 @@
             this.btnBuscarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarRegistro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarRegistro.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnBuscarRegistro.Location = new System.Drawing.Point(463, 34);
+            this.btnBuscarRegistro.Location = new System.Drawing.Point(463, 28);
             this.btnBuscarRegistro.Name = "btnBuscarRegistro";
-            this.btnBuscarRegistro.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarRegistro.Size = new System.Drawing.Size(88, 35);
             this.btnBuscarRegistro.TabIndex = 16;
             this.btnBuscarRegistro.Text = "Buscar";
             this.btnBuscarRegistro.UseVisualStyleBackColor = false;
@@ -174,7 +174,7 @@
             // 
             // dataGridView
             // 
-            this.dataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
@@ -198,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSlateGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.groupBox2);
             this.Name = "Registro_E_S";

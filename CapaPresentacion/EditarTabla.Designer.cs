@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,7 +39,10 @@
             this.chkCompletado = new System.Windows.Forms.CheckBox();
             this.dgvTareasRelacionadas = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareasRelacionadas)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -46,7 +50,8 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(132, 109);
+            this.label2.Location = new System.Drawing.Point(42, 100);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 18);
             this.label2.TabIndex = 1;
@@ -57,7 +62,8 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(132, 150);
+            this.label3.Location = new System.Drawing.Point(47, 140);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 18);
             this.label3.TabIndex = 2;
@@ -68,7 +74,8 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(132, 191);
+            this.label4.Location = new System.Drawing.Point(107, 186);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 18);
             this.label4.TabIndex = 3;
@@ -76,16 +83,18 @@
             // 
             // txtFechaLimite
             // 
-            this.txtFechaLimite.Location = new System.Drawing.Point(509, 110);
+            this.txtFechaLimite.Location = new System.Drawing.Point(168, 100);
+            this.txtFechaLimite.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFechaLimite.Name = "txtFechaLimite";
-            this.txtFechaLimite.Size = new System.Drawing.Size(121, 20);
+            this.txtFechaLimite.Size = new System.Drawing.Size(140, 23);
             this.txtFechaLimite.TabIndex = 5;
             // 
             // txtLink
             // 
-            this.txtLink.Location = new System.Drawing.Point(509, 189);
+            this.txtLink.Location = new System.Drawing.Point(168, 186);
+            this.txtLink.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtLink.Name = "txtLink";
-            this.txtLink.Size = new System.Drawing.Size(121, 20);
+            this.txtLink.Size = new System.Drawing.Size(140, 23);
             this.txtLink.TabIndex = 7;
             // 
             // label5
@@ -93,7 +102,8 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(132, 72);
+            this.label5.Location = new System.Drawing.Point(85, 57);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 18);
             this.label5.TabIndex = 8;
@@ -102,9 +112,10 @@
             // cmbCuentas
             // 
             this.cmbCuentas.FormattingEnabled = true;
-            this.cmbCuentas.Location = new System.Drawing.Point(509, 73);
+            this.cmbCuentas.Location = new System.Drawing.Point(168, 57);
+            this.cmbCuentas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbCuentas.Name = "cmbCuentas";
-            this.cmbCuentas.Size = new System.Drawing.Size(121, 21);
+            this.cmbCuentas.Size = new System.Drawing.Size(140, 23);
             this.cmbCuentas.TabIndex = 9;
             this.cmbCuentas.SelectedIndexChanged += new System.EventHandler(this.cbmCuentas_SelectedIndexChanged);
             // 
@@ -113,7 +124,8 @@
             this.chkCompletado.AutoSize = true;
             this.chkCompletado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.chkCompletado.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.chkCompletado.Location = new System.Drawing.Point(509, 153);
+            this.chkCompletado.Location = new System.Drawing.Point(168, 140);
+            this.chkCompletado.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.chkCompletado.Name = "chkCompletado";
             this.chkCompletado.Size = new System.Drawing.Size(118, 22);
             this.chkCompletado.TabIndex = 10;
@@ -122,45 +134,89 @@
             // 
             // dgvTareasRelacionadas
             // 
+            this.dgvTareasRelacionadas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.dgvTareasRelacionadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTareasRelacionadas.Location = new System.Drawing.Point(135, 234);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTareasRelacionadas.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTareasRelacionadas.Location = new System.Drawing.Point(20, 232);
+            this.dgvTareasRelacionadas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvTareasRelacionadas.Name = "dgvTareasRelacionadas";
-            this.dgvTareasRelacionadas.Size = new System.Drawing.Size(495, 174);
+            this.dgvTareasRelacionadas.Size = new System.Drawing.Size(578, 201);
             this.dgvTareasRelacionadas.TabIndex = 11;
             this.dgvTareasRelacionadas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTareasRelacionadas_CellContentClick);
             this.dgvTareasRelacionadas.SelectionChanged += new System.EventHandler(this.dgvTareasRelacionadas_SelectionChanged);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(699, 293);
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Location = new System.Drawing.Point(340, 186);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(88, 27);
             this.btnGuardar.TabIndex = 12;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.dgvTareasRelacionadas);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.chkCompletado);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.cmbCuentas);
+            this.groupBox1.Controls.Add(this.txtLink);
+            this.groupBox1.Controls.Add(this.txtFechaLimite);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(12, 19);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(621, 463);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Editar Tabla de Tarea";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(454, 186);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 27);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // EditarTabla
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.dgvTareasRelacionadas);
-            this.Controls.Add(this.chkCompletado);
-            this.Controls.Add(this.cmbCuentas);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtLink);
-            this.Controls.Add(this.txtFechaLimite);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(643, 493);
+            this.ControlBox = false;
+            this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "EditarTabla";
             this.Text = "EditarTabla";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareasRelacionadas)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -175,5 +231,7 @@
         private System.Windows.Forms.CheckBox chkCompletado;
         private System.Windows.Forms.DataGridView dgvTareasRelacionadas;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

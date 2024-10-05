@@ -69,7 +69,12 @@ namespace CapaPresentacion
             }
 
             MessageBox.Show("Tareas generadas e insertadas para la cuenta: " + cuenta);
+            this.Close();
         }
-        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

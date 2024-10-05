@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTareas = new System.Windows.Forms.DataGridView();
             this.txtValorBusqueda = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -36,10 +37,10 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnExportarExcel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -47,36 +48,52 @@
             // 
             // dgvTareas
             // 
+            this.dgvTareas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTareas.Location = new System.Drawing.Point(12, 109);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTareas.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTareas.Location = new System.Drawing.Point(20, 84);
+            this.dgvTareas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvTareas.Name = "dgvTareas";
-            this.dgvTareas.Size = new System.Drawing.Size(601, 351);
+            this.dgvTareas.Size = new System.Drawing.Size(786, 405);
             this.dgvTareas.TabIndex = 0;
             // 
             // txtValorBusqueda
             // 
-            this.txtValorBusqueda.Location = new System.Drawing.Point(188, 26);
+            this.txtValorBusqueda.Location = new System.Drawing.Point(20, 44);
+            this.txtValorBusqueda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtValorBusqueda.Name = "txtValorBusqueda";
-            this.txtValorBusqueda.Size = new System.Drawing.Size(247, 20);
+            this.txtValorBusqueda.Size = new System.Drawing.Size(170, 23);
             this.txtValorBusqueda.TabIndex = 2;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(461, 25);
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(197, 25);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(118, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(108, 45);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnGenerarTabla
             // 
-            this.btnGenerarTabla.BackColor = System.Drawing.Color.Gray;
-            this.btnGenerarTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarTabla.Location = new System.Drawing.Point(641, 33);
+            this.btnGenerarTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnGenerarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarTabla.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarTabla.Location = new System.Drawing.Point(331, 20);
+            this.btnGenerarTabla.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGenerarTabla.Name = "btnGenerarTabla";
-            this.btnGenerarTabla.Size = new System.Drawing.Size(95, 66);
+            this.btnGenerarTabla.Size = new System.Drawing.Size(124, 58);
             this.btnGenerarTabla.TabIndex = 4;
             this.btnGenerarTabla.Text = "Generar Tabla Tarea";
             this.btnGenerarTabla.UseVisualStyleBackColor = false;
@@ -84,11 +101,13 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEditar.Location = new System.Drawing.Point(641, 143);
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(462, 20);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(95, 66);
+            this.btnEditar.Size = new System.Drawing.Size(111, 58);
             this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -96,12 +115,14 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEliminar.Location = new System.Drawing.Point(641, 257);
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(580, 20);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(95, 66);
+            this.btnEliminar.Size = new System.Drawing.Size(111, 58);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -109,10 +130,13 @@
             // 
             // btnExportarExcel
             // 
-            this.btnExportarExcel.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnExportarExcel.Location = new System.Drawing.Point(747, 33);
+            this.btnExportarExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnExportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportarExcel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportarExcel.Location = new System.Drawing.Point(695, 20);
+            this.btnExportarExcel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnExportarExcel.Name = "btnExportarExcel";
-            this.btnExportarExcel.Size = new System.Drawing.Size(95, 66);
+            this.btnExportarExcel.Size = new System.Drawing.Size(111, 57);
             this.btnExportarExcel.TabIndex = 7;
             this.btnExportarExcel.Text = "Descargar Excel";
             this.btnExportarExcel.UseVisualStyleBackColor = false;
@@ -120,34 +144,22 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(103)))), ((int)(((byte)(255)))));
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtValorBusqueda);
+            this.groupBox1.Controls.Add(this.dgvTareas);
+            this.groupBox1.Controls.Add(this.btnExportarExcel);
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Location = new System.Drawing.Point(12, 30);
+            this.groupBox1.Controls.Add(this.btnEliminar);
+            this.groupBox1.Controls.Add(this.btnGenerarTabla);
+            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Location = new System.Drawing.Point(14, 35);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(601, 73);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Size = new System.Drawing.Size(831, 519);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Cuenta",
-            "",
-            "Tareas que faltan",
-            "",
-            "Fecha limite",
-            "",
-            "Completado",
-            "",
-            "link"});
-            this.comboBox1.Location = new System.Drawing.Point(21, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.Text = "Tipo de Busqueda";
             // 
             // menuStrip1
             // 
@@ -158,7 +170,8 @@
             this.archivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(845, 25);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(859, 25);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,25 +188,38 @@
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(16, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Cuenta";
+            // 
             // TablaTarea
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(845, 492);
+            this.ClientSize = new System.Drawing.Size(859, 568);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnExportarExcel);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnGenerarTabla);
-            this.Controls.Add(this.dgvTareas);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "TablaTarea";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TablaTarea";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -218,6 +244,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
