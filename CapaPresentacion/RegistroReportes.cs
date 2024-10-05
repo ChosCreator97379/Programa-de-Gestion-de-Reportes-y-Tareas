@@ -62,7 +62,16 @@ namespace CapaPresentacion
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            DataTable dtReportes = ReportesCN.ObtenerReportes();
 
+            if (dtReportes != null)
+            {
+                dataGridView.DataSource = dtReportes;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar los reportes.");
+            }
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -114,6 +123,26 @@ namespace CapaPresentacion
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                int idReporte = Convert.ToInt32(dataGridView.SelectedRows[0].Cells["ID"].Value);
+                EditarReporte formEdicion = new EditarReporte(idReporte);
+                formEdicion.ShowDialog();
+                // Aquí puedes recargar los datos del DataGridView si es necesario
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un reporte para editar.");
+            }
+        }
+
+        private void inicioToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

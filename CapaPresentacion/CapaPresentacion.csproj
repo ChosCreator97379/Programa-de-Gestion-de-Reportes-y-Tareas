@@ -247,6 +247,9 @@
     <EmbeddedResource Include="EditarEmpleado.resx">
       <DependentUpon>EditarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditarReporte.resx">
+      <DependentUpon>EditarReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditarTabla.resx">
       <DependentUpon>EditarTabla.cs</DependentUpon>
     </EmbeddedResource>
