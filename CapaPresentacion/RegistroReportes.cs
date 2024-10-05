@@ -144,5 +144,28 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                int idReporte = Convert.ToInt32(dataGridView.SelectedRows[0].Cells["ID"].Value);
+
+                // Confirmar la eliminación
+                var result = MessageBox.Show("¿Estás seguro de que deseas eliminar este reporte?", "Confirmar Eliminación", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    ReportesCN.EliminarReporte(idReporte);
+                    MessageBox.Show("Reporte eliminado exitosamente.");
+
+                    // Recargar el DataGridView después de la eliminación
+                    CargarReportes();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un reporte para eliminar.");
+            }
+        }
     }
 }

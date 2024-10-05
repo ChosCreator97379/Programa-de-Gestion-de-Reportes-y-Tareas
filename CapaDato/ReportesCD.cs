@@ -124,5 +124,17 @@ namespace CapaDato
                 return dt;
             }
         }
+        public static void EliminarReporte(int id)
+        {
+            using (SqlConnection conn = ConexionCD.sqlConnection())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM Reportes WHERE ID = @ID", conn))
+                {
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

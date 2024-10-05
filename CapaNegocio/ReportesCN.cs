@@ -39,6 +39,10 @@ namespace CapaNegocio
         {
             return CapaDato.ReportesCD.ObtenerEmpleados();
         }
+        public static void EliminarReporte(int id)
+        {
+            ReportesCD.EliminarReporte(id);
+        }
     }
 
 }
