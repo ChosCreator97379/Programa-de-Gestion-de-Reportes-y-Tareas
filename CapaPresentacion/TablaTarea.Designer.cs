@@ -41,6 +41,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDescargarExcelXUnidad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -61,7 +62,7 @@
             this.dgvTareas.Location = new System.Drawing.Point(20, 84);
             this.dgvTareas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvTareas.Name = "dgvTareas";
-            this.dgvTareas.Size = new System.Drawing.Size(786, 405);
+            this.dgvTareas.Size = new System.Drawing.Size(909, 405);
             this.dgvTareas.TabIndex = 0;
             // 
             // txtValorBusqueda
@@ -145,6 +146,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.groupBox1.Controls.Add(this.btnDescargarExcelXUnidad);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtValorBusqueda);
             this.groupBox1.Controls.Add(this.dgvTareas);
@@ -157,7 +159,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(831, 519);
+            this.groupBox1.Size = new System.Drawing.Size(945, 519);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
@@ -183,7 +185,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(859, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(972, 25);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -200,16 +202,28 @@
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
+            // 
+            // btnDescargarExcelXUnidad
+            // 
+            this.btnDescargarExcelXUnidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnDescargarExcelXUnidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescargarExcelXUnidad.Location = new System.Drawing.Point(813, 20);
+            this.btnDescargarExcelXUnidad.Name = "btnDescargarExcelXUnidad";
+            this.btnDescargarExcelXUnidad.Size = new System.Drawing.Size(116, 57);
+            this.btnDescargarExcelXUnidad.TabIndex = 9;
+            this.btnDescargarExcelXUnidad.Text = "Descargar Excel (X UNIDAD)";
+            this.btnDescargarExcelXUnidad.UseVisualStyleBackColor = false;
+            this.btnDescargarExcelXUnidad.Click += new System.EventHandler(this.btnDescargarExcelXUnidad_Click);
             // 
             // TablaTarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(859, 568);
+            this.ClientSize = new System.Drawing.Size(972, 568);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -245,5 +259,6 @@
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDescargarExcelXUnidad;
     }
 }
