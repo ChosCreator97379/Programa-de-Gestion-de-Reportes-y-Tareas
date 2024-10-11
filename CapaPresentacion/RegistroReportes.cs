@@ -22,10 +22,17 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        
+
 
         private void Registro_E_S_Load(object sender, EventArgs e)
         {
+            // Rellenar el ComboBox con las opciones de búsqueda
+            cmbCampoBusqueda.Items.Add("ID");
+            cmbCampoBusqueda.Items.Add("Cuenta");
+            cmbCampoBusqueda.Items.Add("Marketing");
+            cmbCampoBusqueda.Items.Add("Diseñador");
+            cmbCampoBusqueda.Items.Add("Audiovisual");
+            cmbCampoBusqueda.SelectedIndex = 0;
             // Cargar los datos de la tabla Reportes
             DataTable dtReportes = ReportesCN.ObtenerReportes();
 
@@ -58,7 +65,7 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        
+
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -78,18 +85,40 @@ namespace CapaPresentacion
         {
 
         }
-       
+
 
         private void btnBuscarRegistro_Click(object sender, EventArgs e)
         {
-            
+            string columnaSeleccionada = cmbCampoBusqueda.SelectedItem.ToString();
+            string valorBusqueda = txtBusqueda.Text;
+
+            // Verificar si el valor de búsqueda no está vacío
+            if (string.IsNullOrWhiteSpace(valorBusqueda))
+            {
+                MessageBox.Show("Por favor, ingrese un valor para buscar.");
+                return;
+            }
+
+            // Realizar la búsqueda en la base de datos
+            DataTable dtResultados = ReportesCN.BuscarReporte(columnaSeleccionada, valorBusqueda);
+
+            // Verificar si se encontraron resultados
+            if (dtResultados != null && dtResultados.Rows.Count > 0)
+            {
+                dataGridView.DataSource = dtResultados; // Mostrar los resultados en el DataGridView
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron resultados.");
+                CargarReportes(); // Recargar todos los reportes si no hay resultados
+            }
         }
 
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-           
+
         }
-        
+
         private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -166,6 +195,127 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Por favor, selecciona un reporte para eliminar.");
             }
+        }
+
+        private void cmbCampoBusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccione una fila para exportar.");
+                return;
+            }
+
+            // Crear un nuevo workbook y agregar una hoja de trabajo
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Reporte");
+
+                // Encabezados
+                worksheet.Cell("B2").Value = "ID";
+                worksheet.Cell("C2").Value = "Cuenta";
+                worksheet.Range("D2:E2").Merge().Value = "Marketing";
+                worksheet.Range("F2:G2").Merge().Value = "Diseñador";
+                worksheet.Range("H2:I2").Merge().Value = "Audiovisual";
+                worksheet.Cell("J2").Value = "Hora";
+
+                worksheet.Range("K2:M2").Merge().Value = "Control";
+                worksheet.Cell("K3").Value = "Detalle del Reporte";
+                worksheet.Cell("L3").Value = "Cumplió a tiempo?";
+                worksheet.Cell("M3").Value = "Observación";
+
+                worksheet.Range("N2:P2").Merge().Value = "Actividades";
+                worksheet.Cell("N3").Value = "M";
+                worksheet.Cell("O3").Value = "D";
+                worksheet.Cell("P3").Value = "A";
+
+                worksheet.Range("Q2:S2").Merge().Value = "Horas cumplidas";
+                worksheet.Cell("Q3").Value = "M";
+                worksheet.Cell("R3").Value = "D";
+                worksheet.Cell("S3").Value = "A";
+
+                worksheet.Cell("T3").Value = "Puntaje";
+
+                // Obtener los datos seleccionados
+                var filaSeleccionada = dataGridView.SelectedRows[0];
+
+                // Llenar datos - Conversion explícita para evitar errores de tipo
+                worksheet.Cell("B4").Value = filaSeleccionada.Cells["ID"].Value?.ToString();
+                worksheet.Cell("C4").Value = filaSeleccionada.Cells["Cuenta"].Value?.ToString();
+
+                // Separar nombre y apellido para Marketing, Diseñador y Audiovisual
+                var marketing = filaSeleccionada.Cells["Marketing"].Value?.ToString().Split(' ');
+                var disenador = filaSeleccionada.Cells["Disenador"].Value?.ToString().Split(' ');
+                var audiovisual = filaSeleccionada.Cells["Audiovisual"].Value?.ToString().Split(' ');
+
+                worksheet.Cell("D4").Value = marketing?[0] ?? ""; // Nombre Marketing
+                worksheet.Cell("E4").Value = marketing?.Length > 1 ? marketing[1] : ""; // Apellido Marketing
+
+                worksheet.Cell("F4").Value = disenador?[0] ?? ""; // Nombre Diseñador
+                worksheet.Cell("G4").Value = disenador?.Length > 1 ? disenador[1] : ""; // Apellido Diseñador
+
+                worksheet.Cell("H4").Value = audiovisual?[0] ?? ""; // Nombre Audiovisual
+                worksheet.Cell("I4").Value = audiovisual?.Length > 1 ? audiovisual[1] : ""; // Apellido Audiovisual
+
+                // Llenar horas
+                worksheet.Cell("J4").Value = filaSeleccionada.Cells["Hora_01"].Value?.ToString();
+                worksheet.Cell("J5").Value = filaSeleccionada.Cells["Hora_02"].Value?.ToString();
+                worksheet.Cell("J6").Value = filaSeleccionada.Cells["Hora_03"].Value?.ToString();
+
+                // Llenar detalle del reporte
+                worksheet.Cell("K4").Value = filaSeleccionada.Cells["Reporte_01"].Value?.ToString();
+                worksheet.Cell("K5").Value = filaSeleccionada.Cells["Reporte_02"].Value?.ToString();
+                worksheet.Cell("K6").Value = filaSeleccionada.Cells["Reporte_03"].Value?.ToString();
+
+                // Cumplió la actividad a tiempo? (subida de celda)
+                worksheet.Cell("L4").Value = filaSeleccionada.Cells["Cumplio_Actividad_01"].Value?.ToString();
+                worksheet.Cell("L5").Value = filaSeleccionada.Cells["Cumplio_Actividad_02"].Value?.ToString();
+
+                // Observaciones (subida de celda)
+                worksheet.Cell("M4").Value = filaSeleccionada.Cells["Observacion_01"].Value?.ToString();
+                worksheet.Cell("M5").Value = filaSeleccionada.Cells["Observacion_02"].Value?.ToString();
+                worksheet.Cell("M6").Value = filaSeleccionada.Cells["Observacion_03"].Value?.ToString();
+
+                // Llenar actividades
+                worksheet.Cell("N4").Value = filaSeleccionada.Cells["Act_M"].Value?.ToString();
+                worksheet.Cell("O4").Value = filaSeleccionada.Cells["Act_D"].Value?.ToString();
+                worksheet.Cell("P4").Value = filaSeleccionada.Cells["Act_A"].Value?.ToString();
+
+                // Llenar horas cumplidas
+                worksheet.Cell("Q4").Value = filaSeleccionada.Cells["Horas_M"].Value?.ToString();
+                worksheet.Cell("R4").Value = filaSeleccionada.Cells["Horas_D"].Value?.ToString();
+                worksheet.Cell("S4").Value = filaSeleccionada.Cells["Horas_A"].Value?.ToString();
+
+                // Puntaje
+                worksheet.Cell("T4").Value = filaSeleccionada.Cells["Puntaje"].Value?.ToString();
+
+                // Diseño de los encabezados
+                var encabezados = worksheet.Range("B2:T3");
+                encabezados.Style.Font.Bold = true;
+                encabezados.Style.Fill.BackgroundColor = XLColor.LightBlue;
+                encabezados.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                encabezados.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+                encabezados.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+
+                // Guardar archivo
+                var saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "Archivos de Excel (*.xlsx)|*.xlsx",
+                    FileName = "ReporteExportado.xlsx"
+                };
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    workbook.SaveAs(saveFileDialog.FileName);
+                    MessageBox.Show("Exportación completada con éxito.");
+                }
+            }
+
+
         }
     }
 }

@@ -136,5 +136,29 @@ namespace CapaDato
                 }
             }
         }
+        public static DataTable BuscarReporte(string columna, string valor)
+        {
+            using (SqlConnection connection = ConexionCD.sqlConnection())
+            {
+                // Abrir conexión
+                connection.Open();
+
+                // Crear consulta SQL
+                string query = $"SELECT * FROM Reportes WHERE {columna} LIKE @valor";
+
+                // Crear comando SQL
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@valor", "%" + valor + "%"); // Búsqueda con LIKE
+
+                    // Ejecutar consulta y llenar DataTable
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dtResultados = new DataTable();
+                    adapter.Fill(dtResultados);
+
+                    return dtResultados;
+                }
+            }
+        }
     }
 }

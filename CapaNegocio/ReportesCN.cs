@@ -43,6 +43,10 @@ namespace CapaNegocio
         {
             ReportesCD.EliminarReporte(id);
         }
+        public static DataTable BuscarReporte(string columna, string valor)
+        {
+            return ReportesCD.BuscarReporte(columna, valor);
+        }
     }
 
 }
