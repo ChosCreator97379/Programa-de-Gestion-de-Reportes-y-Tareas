@@ -219,8 +219,14 @@ namespace CapaPresentacion
                 worksheet.Cell("B2").Value = "ID";
                 worksheet.Cell("C2").Value = "Cuenta";
                 worksheet.Range("D2:E2").Merge().Value = "Marketing";
+                worksheet.Range("D3").Merge().Value = "Nombre";
+                worksheet.Range("E3").Merge().Value = "Apellido";
                 worksheet.Range("F2:G2").Merge().Value = "Diseñador";
+                worksheet.Range("F3").Merge().Value = "Nombre";
+                worksheet.Range("G3").Merge().Value = "Apellido";
                 worksheet.Range("H2:I2").Merge().Value = "Audiovisual";
+                worksheet.Range("H3").Merge().Value = "Nombre";
+                worksheet.Range("I3").Merge().Value = "Apellido";
                 worksheet.Cell("J2").Value = "Hora";
 
                 worksheet.Range("K2:M2").Merge().Value = "Control";
@@ -234,9 +240,9 @@ namespace CapaPresentacion
                 worksheet.Cell("P3").Value = "A";
 
                 worksheet.Range("Q2:S2").Merge().Value = "Horas cumplidas";
-                worksheet.Cell("Q3").Value = "M";
-                worksheet.Cell("R3").Value = "D";
-                worksheet.Cell("S3").Value = "A";
+                worksheet.Cell("Q3").Value = "    M    ";
+                worksheet.Cell("R3").Value = "    D    ";
+                worksheet.Cell("S3").Value = "    A    ";
 
                 worksheet.Cell("T3").Value = "Puntaje";
 
@@ -273,6 +279,7 @@ namespace CapaPresentacion
 
                 // Cumplió la actividad a tiempo? (subida de celda)
                 worksheet.Cell("L4").Value = filaSeleccionada.Cells["Cumplio_Actividad_01"].Value?.ToString();
+                worksheet.Range("L5:L6").Merge();
                 worksheet.Cell("L5").Value = filaSeleccionada.Cells["Cumplio_Actividad_02"].Value?.ToString();
 
                 // Observaciones (subida de celda)
@@ -301,6 +308,27 @@ namespace CapaPresentacion
                 encabezados.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
                 encabezados.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
 
+                worksheet.Range("B2:B3").Style.Fill.BackgroundColor = XLColor.Orange;   // ID
+                worksheet.Range("C2:C3").Style.Fill.BackgroundColor = XLColor.LightCoral; // Cuenta
+                worksheet.Range("D2:E3").Style.Fill.BackgroundColor = XLColor.Yellow;   // Marketing
+                worksheet.Range("F2:G3").Style.Fill.BackgroundColor = XLColor.Aqua;     // Diseñador
+                worksheet.Range("H2:I3").Style.Fill.BackgroundColor = XLColor.Green;    // Audiovisual
+                worksheet.Range("J2:J3").Style.Fill.BackgroundColor = XLColor.LightPink; // Hora
+                worksheet.Range("K2:M2").Style.Fill.BackgroundColor = XLColor.LightSkyBlue; // Control
+                worksheet.Range("K3").Style.Fill.BackgroundColor = XLColor.LightSkyBlue;
+                worksheet.Range("L3").Style.Fill.BackgroundColor = XLColor.LightSkyBlue;
+                worksheet.Range("M3").Style.Fill.BackgroundColor = XLColor.LightSkyBlue;
+                worksheet.Range("N2:P2").Style.Fill.BackgroundColor = XLColor.LightGoldenrodYellow; // Actividades
+                worksheet.Range("N3").Style.Fill.BackgroundColor = XLColor.LightGoldenrodYellow;
+                worksheet.Range("O3").Style.Fill.BackgroundColor = XLColor.LightGoldenrodYellow;
+                worksheet.Range("P3").Style.Fill.BackgroundColor = XLColor.LightGoldenrodYellow;
+                worksheet.Range("Q2:S2").Style.Fill.BackgroundColor = XLColor.LightSteelBlue; // Horas cumplidas
+                worksheet.Range("Q3").Style.Fill.BackgroundColor = XLColor.LightSteelBlue;
+                worksheet.Range("R3").Style.Fill.BackgroundColor = XLColor.LightSteelBlue;
+                worksheet.Range("S3").Style.Fill.BackgroundColor = XLColor.LightSteelBlue;
+                worksheet.Range("T3").Style.Fill.BackgroundColor = XLColor.LightGreen;  // Puntaje
+
+                worksheet.Columns().AdjustToContents();
                 // Guardar archivo
                 var saveFileDialog = new SaveFileDialog
                 {
