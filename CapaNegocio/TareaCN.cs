@@ -35,10 +35,12 @@ namespace CapaNegocio
         {
             TareaCD.ActualizarTarea(id, fechaLimite, completado, link);
         }
+        /*
         public static void LimpiarBaseDeDatosPorCuentas(List<string> cuentas)
         {
             TareaCD.LimpiarTablasPorCuenta(cuentas); // Llamada al método de la capa de datos
         }
+        */
 
         public static List<string> ObtenerTodasLasCuentas()
         {

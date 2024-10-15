@@ -127,7 +127,7 @@ namespace CapaPresentacion
                 MessageBox.Show("Las tablas se exportaron correctamente.");
 
                 // Limpia las tablas de la base de datos de las cuentas exportadas
-                TareaCN.LimpiarBaseDeDatosPorCuentas(cuentasExportadas);
+                //TareaCN.LimpiarBaseDeDatosPorCuentas(cuentasExportadas);
             }
         }
         private void btnEditar_Click(object sender, EventArgs e)

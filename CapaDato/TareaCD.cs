@@ -173,6 +173,7 @@ namespace CapaDato
                 cmd.ExecuteNonQuery();
             }
         }
+        /*
         public static void LimpiarTablasPorCuenta(List<string> cuentas)
         {
             using (SqlConnection cnx = ConexionCD.sqlConnection())
@@ -187,6 +188,7 @@ namespace CapaDato
                 }
             }
         }
+        */
         public static List<string> ObtenerTodasLasCuentas()
         {
             List<string> cuentas = new List<string>();

@@ -37,11 +37,11 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnExportarExcel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDescargarExcelXUnidad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDescargarExcelXUnidad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -139,7 +139,7 @@
             this.btnExportarExcel.Name = "btnExportarExcel";
             this.btnExportarExcel.Size = new System.Drawing.Size(111, 57);
             this.btnExportarExcel.TabIndex = 7;
-            this.btnExportarExcel.Text = "Descargar Excel";
+            this.btnExportarExcel.Text = "Descargar Todos los Excel";
             this.btnExportarExcel.UseVisualStyleBackColor = false;
             this.btnExportarExcel.Click += new System.EventHandler(this.btnExportarExcel_Click);
             // 
@@ -162,6 +162,18 @@
             this.groupBox1.Size = new System.Drawing.Size(945, 519);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
+            // 
+            // btnDescargarExcelXUnidad
+            // 
+            this.btnDescargarExcelXUnidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnDescargarExcelXUnidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescargarExcelXUnidad.Location = new System.Drawing.Point(813, 20);
+            this.btnDescargarExcelXUnidad.Name = "btnDescargarExcelXUnidad";
+            this.btnDescargarExcelXUnidad.Size = new System.Drawing.Size(116, 57);
+            this.btnDescargarExcelXUnidad.TabIndex = 9;
+            this.btnDescargarExcelXUnidad.Text = "Descargar Excel (X UNIDAD)";
+            this.btnDescargarExcelXUnidad.UseVisualStyleBackColor = false;
+            this.btnDescargarExcelXUnidad.Click += new System.EventHandler(this.btnDescargarExcelXUnidad_Click);
             // 
             // label1
             // 
@@ -205,18 +217,6 @@
             this.inicioToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
-            // 
-            // btnDescargarExcelXUnidad
-            // 
-            this.btnDescargarExcelXUnidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnDescargarExcelXUnidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDescargarExcelXUnidad.Location = new System.Drawing.Point(813, 20);
-            this.btnDescargarExcelXUnidad.Name = "btnDescargarExcelXUnidad";
-            this.btnDescargarExcelXUnidad.Size = new System.Drawing.Size(116, 57);
-            this.btnDescargarExcelXUnidad.TabIndex = 9;
-            this.btnDescargarExcelXUnidad.Text = "Descargar Excel (X UNIDAD)";
-            this.btnDescargarExcelXUnidad.UseVisualStyleBackColor = false;
-            this.btnDescargarExcelXUnidad.Click += new System.EventHandler(this.btnDescargarExcelXUnidad_Click);
             // 
             // TablaTarea
             // 
