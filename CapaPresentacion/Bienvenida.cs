@@ -52,8 +52,6 @@ namespace CapaPresentacion
 
         private void administradorToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Login Login = new Login();
-            Login.Show();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,6 +68,18 @@ namespace CapaPresentacion
         {
             TablaTarea tablatarea = new TablaTarea();
             tablatarea.Show();
+        }
+
+        private void listaDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login Login = new Login();
+            Login.Show();
+        }
+
+        private void listaDeCuentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Descarga_de_Excel cuenta = new Descarga_de_Excel();
+            cuenta.Show();
         }
     }
 }

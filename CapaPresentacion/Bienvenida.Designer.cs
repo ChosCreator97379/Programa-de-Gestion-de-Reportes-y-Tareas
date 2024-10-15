@@ -32,10 +32,12 @@
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeEntradaYSalidaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.administradorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosDeTareaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administradorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listaDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDeCuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -82,15 +84,6 @@
             this.registroDeEntradaYSalidaToolStripMenuItem1.Text = "Reporte de Tarea";
             this.registroDeEntradaYSalidaToolStripMenuItem1.Click += new System.EventHandler(this.registroDeEntradaYSalidaToolStripMenuItem1_Click);
             // 
-            // administradorToolStripMenuItem1
-            // 
-            this.administradorToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.administradorToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.administradorToolStripMenuItem1.Name = "administradorToolStripMenuItem1";
-            this.administradorToolStripMenuItem1.Size = new System.Drawing.Size(109, 21);
-            this.administradorToolStripMenuItem1.Text = "Administrador";
-            this.administradorToolStripMenuItem1.Click += new System.EventHandler(this.administradorToolStripMenuItem1_Click);
-            // 
             // registrosDeTareaToolStripMenuItem
             // 
             this.registrosDeTareaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
@@ -99,6 +92,18 @@
             this.registrosDeTareaToolStripMenuItem.Size = new System.Drawing.Size(109, 21);
             this.registrosDeTareaToolStripMenuItem.Text = "Tabla de Tarea";
             this.registrosDeTareaToolStripMenuItem.Click += new System.EventHandler(this.registrosDeTareaToolStripMenuItem_Click);
+            // 
+            // administradorToolStripMenuItem1
+            // 
+            this.administradorToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaDeEmpleadosToolStripMenuItem,
+            this.listaDeCuentasToolStripMenuItem});
+            this.administradorToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.administradorToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.administradorToolStripMenuItem1.Name = "administradorToolStripMenuItem1";
+            this.administradorToolStripMenuItem1.Size = new System.Drawing.Size(109, 21);
+            this.administradorToolStripMenuItem1.Text = "Administrador";
+            this.administradorToolStripMenuItem1.Click += new System.EventHandler(this.administradorToolStripMenuItem1_Click);
             // 
             // label1
             // 
@@ -123,6 +128,20 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // listaDeEmpleadosToolStripMenuItem
+            // 
+            this.listaDeEmpleadosToolStripMenuItem.Name = "listaDeEmpleadosToolStripMenuItem";
+            this.listaDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.listaDeEmpleadosToolStripMenuItem.Text = "Lista de Empleados";
+            this.listaDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.listaDeEmpleadosToolStripMenuItem_Click);
+            // 
+            // listaDeCuentasToolStripMenuItem
+            // 
+            this.listaDeCuentasToolStripMenuItem.Name = "listaDeCuentasToolStripMenuItem";
+            this.listaDeCuentasToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.listaDeCuentasToolStripMenuItem.Text = "Lista de Cuentas";
+            this.listaDeCuentasToolStripMenuItem.Click += new System.EventHandler(this.listaDeCuentasToolStripMenuItem_Click);
             // 
             // Bienvenida
             // 
@@ -157,6 +176,8 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem registrosDeTareaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDeEmpleadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDeCuentasToolStripMenuItem;
     }
 }
 

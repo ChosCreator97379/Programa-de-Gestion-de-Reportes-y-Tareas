@@ -116,6 +116,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CuentaCN.cs" />
     <Compile Include="EmpleadoCN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportesCN.cs" />

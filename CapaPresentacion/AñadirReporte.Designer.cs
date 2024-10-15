@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCuenta = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCuenta = new System.Windows.Forms.TextBox();
             this.cmbAudiovisual = new System.Windows.Forms.ComboBox();
             this.cmbDiseñador = new System.Windows.Forms.ComboBox();
             this.cmbMarketing = new System.Windows.Forms.ComboBox();
@@ -45,8 +45,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtCuenta);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmbAudiovisual);
             this.groupBox1.Controls.Add(this.cmbDiseñador);
             this.groupBox1.Controls.Add(this.cmbMarketing);
@@ -65,6 +65,15 @@
             this.groupBox1.Text = "Añadir Reporte";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // txtCuenta
+            // 
+            this.txtCuenta.FormattingEnabled = true;
+            this.txtCuenta.Location = new System.Drawing.Point(171, 64);
+            this.txtCuenta.Name = "txtCuenta";
+            this.txtCuenta.Size = new System.Drawing.Size(121, 25);
+            this.txtCuenta.TabIndex = 13;
+            this.txtCuenta.SelectedIndexChanged += new System.EventHandler(this.txtCuenta_SelectedIndexChanged);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -73,13 +82,6 @@
             this.label4.Size = new System.Drawing.Size(51, 17);
             this.label4.TabIndex = 12;
             this.label4.Text = "Cuenta";
-            // 
-            // txtCuenta
-            // 
-            this.txtCuenta.Location = new System.Drawing.Point(171, 64);
-            this.txtCuenta.Name = "txtCuenta";
-            this.txtCuenta.Size = new System.Drawing.Size(126, 25);
-            this.txtCuenta.TabIndex = 11;
             // 
             // cmbAudiovisual
             // 
@@ -192,7 +194,7 @@
         private System.Windows.Forms.ComboBox cmbAudiovisual;
         private System.Windows.Forms.ComboBox cmbDiseñador;
         private System.Windows.Forms.ComboBox cmbMarketing;
-        private System.Windows.Forms.TextBox txtCuenta;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox txtCuenta;
     }
 }

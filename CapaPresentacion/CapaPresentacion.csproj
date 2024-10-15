@@ -164,6 +164,12 @@
     <Compile Include="Administrador.Designer.cs">
       <DependentUpon>Administrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="AñadirCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirCuenta.Designer.cs">
+      <DependentUpon>AñadirCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="AñadirEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,11 +188,17 @@
     <Compile Include="Bienvenida.Designer.cs">
       <DependentUpon>Bienvenida.cs</DependentUpon>
     </Compile>
-    <Compile Include="DescargaExcelReporte.cs">
+    <Compile Include="Cuenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DescargaExcelReporte.Designer.cs">
-      <DependentUpon>DescargaExcelReporte.cs</DependentUpon>
+    <Compile Include="Cuenta.Designer.cs">
+      <DependentUpon>Cuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarCuenta.Designer.cs">
+      <DependentUpon>EditarCuenta.cs</DependentUpon>
     </Compile>
     <Compile Include="EditarEmpleado.cs">
       <SubType>Form</SubType>
@@ -235,6 +247,9 @@
     <EmbeddedResource Include="Administrador.resx">
       <DependentUpon>Administrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AñadirCuenta.resx">
+      <DependentUpon>AñadirCuenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AñadirEmpleado.resx">
       <DependentUpon>AñadirEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +258,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bienvenida.resx">
       <DependentUpon>Bienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuenta.resx">
+      <DependentUpon>Cuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarCuenta.resx">
+      <DependentUpon>EditarCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarEmpleado.resx">
       <DependentUpon>EditarEmpleado.cs</DependentUpon>

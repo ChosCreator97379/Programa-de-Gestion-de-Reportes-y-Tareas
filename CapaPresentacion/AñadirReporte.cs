@@ -29,7 +29,11 @@ namespace CapaPresentacion
             // Cargar empleados y ajustar ancho de ComboBox en un solo ciclo
             foreach (var comboBox in new[] { cmbMarketing, cmbDiseñador, cmbAudiovisual })
             {
-                CargarEmpleadosEnComboBox(comboBox);
+                cargarCuentas();
+                // Cargar empleados en ComboBox de Marketing, Diseñador y Audiovisual
+                CargarEmpleadosEnComboBox(cmbMarketing);
+                CargarEmpleadosEnComboBox(cmbDiseñador);
+                CargarEmpleadosEnComboBox(cmbAudiovisual);
                 AjustarAnchoComboBox(comboBox);
             }
         }
@@ -149,6 +153,73 @@ namespace CapaPresentacion
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void txtCuenta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void cargarCuentas()
+        {
+            try
+            {
+                // Obtener la lista de cuentas desde la capa de negocio
+                List<string> cuentas = CuentaCN.ObtenerCuenta();
+
+                // Asignar la lista al ComboBox
+                txtCuenta.DataSource = cuentas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar las cuentas: " + ex.Message);
+            }
+
+        }
+
+        private void txtCuenta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtener la cuenta seleccionada
+                string cuentaSeleccionada = txtCuenta.SelectedItem.ToString();
+
+                // Obtener los empleados relacionados con la cuenta seleccionada
+                List<string> empleados = CuentaCN.ListarEmpleadosPorCuenta(cuentaSeleccionada);
+
+                // Limpiar los ComboBox antes de asignar nuevos valores
+                cmbMarketing.Items.Clear();
+                cmbDiseñador.Items.Clear();
+                cmbAudiovisual.Items.Clear();
+
+                // Llenar los ComboBox con los empleados relacionados
+                foreach (var empleado in empleados)
+                {
+                    cmbMarketing.Items.Add(empleado);
+                    cmbDiseñador.Items.Add(empleado);
+                    cmbAudiovisual.Items.Add(empleado);
+                }
+
+                // Seleccionar el primer empleado como un valor
+                if (empleados.Count > 0)
+                {
+                    cmbMarketing.SelectedItem = empleados[0];
+                }
+
+                if (empleados.Count > 1)
+                {
+                    cmbDiseñador.SelectedItem = empleados[1];
+                }
+
+                if (empleados.Count > 2)
+                {
+                    cmbAudiovisual.SelectedItem = empleados[2];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los empleados: " + ex.Message);
+            }
 
         }
     }

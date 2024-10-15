@@ -169,5 +169,9 @@ namespace CapaPresentacion
             return $"{partes[0]} {partes[1]}"; // Retorna solo el primer nombre y apellido
         }
 
+        private void cmbMarketing_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
