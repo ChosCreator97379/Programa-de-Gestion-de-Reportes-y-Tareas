@@ -20,22 +20,22 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string cuenta = txtCuenta.Text;
+            string cuenta = txtCuenta.SelectedItem?.ToString();
 
             // Tareas predeterminadas para la nueva cuenta
             List<string> tareas = new List<string>()
             {
-                "hoja de preguntas y respuestas",
-                "arquetipo de cliente",
-                "manual de marca",
-                "-mockup/septiembre",
-                "-las plantillas",
-                "-plan de publicaciones/septiembre",
-                "dia de produccion/setiembre",
-                "hoja de designacion",
-                "-hora de publicaciones",
-                "día de publicaciones",
-                "administracion de la cuenta"
+                "Hoja de preguntas y respuestas",
+                "Arquetipo de cliente",
+                "Manual de marca",
+                "Mockup",
+                "Las plantillas",
+                "Plan de publicaciones",
+                "Dia de produccion",
+                "Hoja de designacion",
+                "Hora de publicaciones",
+                "Día de publicaciones",
+                "Administracion de la cuenta"
                 
             };
 
@@ -45,7 +45,7 @@ namespace CapaPresentacion
                 "", "", "", "","",""
             };
 
-            List<string> completado = new List<string>() { "no", "no", "no", "no", "no", "no", "no", "no", "no","no","no" };
+            List<string> completado = new List<string>() { "No", "No", "No", "No", "No", "No", "No", "No", "No","No","No" };
             List<string> links = new List<string>()
             {
                 "",
@@ -75,6 +75,31 @@ namespace CapaPresentacion
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void CargarCuentasCMB()
+        {
+            try
+            {
+                // Obtener la lista de cuentas desde la capa de negocio
+                List<string> cuentas = CuentaCN.ObtenerCuenta();
+
+                // Asignar la lista al ComboBox
+                txtCuenta.DataSource = cuentas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar las cuentas: " + ex.Message);
+            }
+        }
+
+        private void GenerarTablaTarea_Load(object sender, EventArgs e)
+        {
+            CargarCuentasCMB();
         }
     }
 }

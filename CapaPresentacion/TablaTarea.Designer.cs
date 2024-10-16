@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTareas = new System.Windows.Forms.DataGridView();
-            this.txtValorBusqueda = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnGenerarTabla = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -42,6 +41,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtValorBusqueda = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -51,27 +51,19 @@
             // 
             this.dgvTareas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTareas.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTareas.Location = new System.Drawing.Point(20, 84);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTareas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTareas.Location = new System.Drawing.Point(28, 83);
             this.dgvTareas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvTareas.Name = "dgvTareas";
             this.dgvTareas.Size = new System.Drawing.Size(909, 405);
             this.dgvTareas.TabIndex = 0;
-            // 
-            // txtValorBusqueda
-            // 
-            this.txtValorBusqueda.Location = new System.Drawing.Point(20, 44);
-            this.txtValorBusqueda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtValorBusqueda.Name = "txtValorBusqueda";
-            this.txtValorBusqueda.Size = new System.Drawing.Size(170, 23);
-            this.txtValorBusqueda.TabIndex = 2;
             // 
             // btnBuscar
             // 
@@ -146,9 +138,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.groupBox1.Controls.Add(this.txtValorBusqueda);
             this.groupBox1.Controls.Add(this.btnDescargarExcelXUnidad);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtValorBusqueda);
             this.groupBox1.Controls.Add(this.dgvTareas);
             this.groupBox1.Controls.Add(this.btnExportarExcel);
             this.groupBox1.Controls.Add(this.btnBuscar);
@@ -218,6 +210,14 @@
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
+            // txtValorBusqueda
+            // 
+            this.txtValorBusqueda.FormattingEnabled = true;
+            this.txtValorBusqueda.Location = new System.Drawing.Point(28, 38);
+            this.txtValorBusqueda.Name = "txtValorBusqueda";
+            this.txtValorBusqueda.Size = new System.Drawing.Size(121, 23);
+            this.txtValorBusqueda.TabIndex = 10;
+            // 
             // TablaTarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -235,6 +235,7 @@
             this.Name = "TablaTarea";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TablaTarea";
+            this.Load += new System.EventHandler(this.TablaTarea_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -248,7 +249,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvTareas;
-        private System.Windows.Forms.TextBox txtValorBusqueda;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnGenerarTabla;
         private System.Windows.Forms.Button btnEditar;
@@ -260,5 +260,6 @@
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDescargarExcelXUnidad;
+        private System.Windows.Forms.ComboBox txtValorBusqueda;
     }
 }

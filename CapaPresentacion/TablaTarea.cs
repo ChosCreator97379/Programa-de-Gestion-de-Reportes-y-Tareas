@@ -35,6 +35,7 @@ namespace CapaPresentacion
             if (dt != null && dt.Rows.Count > 0)
             {
                 dgvTareas.DataSource = dt; // Mostrar tareas filtradas por cuenta
+                AjustarColumnas();
             }
             else
             {
@@ -336,5 +337,35 @@ namespace CapaPresentacion
                 MessageBox.Show("Por favor, selecciona una cuenta para exportar.");
             }
         }
+        private void CargarCuentasCMB()
+        {
+            try
+            {
+                // Obtener la lista de cuentas desde la capa de negocio
+                List<string> cuentas = CuentaCN.ObtenerCuenta();
+
+                // Asignar la lista al ComboBox
+                txtValorBusqueda.DataSource = cuentas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar las cuentas: " + ex.Message);
+            }
+        }
+
+        private void TablaTarea_Load(object sender, EventArgs e)
+        {
+            CargarCuentasCMB();
+            
+        }
+        private void AjustarColumnas()
+        {
+            // Ajustar el ancho de las columnas al contenido
+            foreach (DataGridViewColumn col in dgvTareas.Columns)
+            {
+                col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+        }
     }
+
 }
