@@ -366,6 +366,16 @@ namespace CapaPresentacion
                 col.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
         }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 
 }

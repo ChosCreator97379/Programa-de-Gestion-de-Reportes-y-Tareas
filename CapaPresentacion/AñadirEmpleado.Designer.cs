@@ -107,9 +107,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(614, 346);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -120,19 +120,21 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(493, 263);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Image = global::CapaPresentacion.Properties.Resources.circulo_cruzado__1_;
+            this.button1.Location = new System.Drawing.Point(482, 249);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 43);
+            this.button1.Size = new System.Drawing.Size(88, 67);
             this.button1.TabIndex = 34;
             this.button1.Text = "Cancelar";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtnombre2
             // 
             this.txtnombre2.Location = new System.Drawing.Point(205, 59);
-            this.txtnombre2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnombre2.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombre2.Name = "txtnombre2";
             this.txtnombre2.Size = new System.Drawing.Size(104, 26);
             this.txtnombre2.TabIndex = 33;
@@ -140,7 +142,7 @@
             // dtpfechanaci
             // 
             this.dtpfechanaci.Location = new System.Drawing.Point(97, 209);
-            this.dtpfechanaci.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpfechanaci.Margin = new System.Windows.Forms.Padding(2);
             this.dtpfechanaci.Name = "dtpfechanaci";
             this.dtpfechanaci.Size = new System.Drawing.Size(151, 26);
             this.dtpfechanaci.TabIndex = 32;
@@ -149,19 +151,21 @@
             // 
             this.btnagregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnagregar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregar.Location = new System.Drawing.Point(396, 263);
-            this.btnagregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnagregar.Image = global::CapaPresentacion.Properties.Resources.disco;
+            this.btnagregar.Location = new System.Drawing.Point(358, 251);
+            this.btnagregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnagregar.Name = "btnagregar";
-            this.btnagregar.Size = new System.Drawing.Size(66, 43);
+            this.btnagregar.Size = new System.Drawing.Size(97, 65);
             this.btnagregar.TabIndex = 31;
             this.btnagregar.Text = "Agregar";
+            this.btnagregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnagregar.UseVisualStyleBackColor = false;
             this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
             // txtcarrera
             // 
             this.txtcarrera.Location = new System.Drawing.Point(443, 203);
-            this.txtcarrera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcarrera.Margin = new System.Windows.Forms.Padding(2);
             this.txtcarrera.Name = "txtcarrera";
             this.txtcarrera.Size = new System.Drawing.Size(107, 26);
             this.txtcarrera.TabIndex = 30;
@@ -169,7 +173,7 @@
             // txtestudios
             // 
             this.txtestudios.Location = new System.Drawing.Point(443, 168);
-            this.txtestudios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtestudios.Margin = new System.Windows.Forms.Padding(2);
             this.txtestudios.Name = "txtestudios";
             this.txtestudios.Size = new System.Drawing.Size(144, 26);
             this.txtestudios.TabIndex = 29;
@@ -177,7 +181,7 @@
             // txtsupervisor
             // 
             this.txtsupervisor.Location = new System.Drawing.Point(443, 134);
-            this.txtsupervisor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtsupervisor.Margin = new System.Windows.Forms.Padding(2);
             this.txtsupervisor.Name = "txtsupervisor";
             this.txtsupervisor.Size = new System.Drawing.Size(116, 26);
             this.txtsupervisor.TabIndex = 28;
@@ -185,7 +189,7 @@
             // txtestadolaboral
             // 
             this.txtestadolaboral.Location = new System.Drawing.Point(443, 97);
-            this.txtestadolaboral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtestadolaboral.Margin = new System.Windows.Forms.Padding(2);
             this.txtestadolaboral.Name = "txtestadolaboral";
             this.txtestadolaboral.Size = new System.Drawing.Size(116, 26);
             this.txtestadolaboral.TabIndex = 27;
@@ -262,7 +266,7 @@
             // txtapellido2
             // 
             this.txtapellido2.Location = new System.Drawing.Point(205, 97);
-            this.txtapellido2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtapellido2.Margin = new System.Windows.Forms.Padding(2);
             this.txtapellido2.Name = "txtapellido2";
             this.txtapellido2.Size = new System.Drawing.Size(104, 26);
             this.txtapellido2.TabIndex = 20;
@@ -270,7 +274,7 @@
             // txtarea
             // 
             this.txtarea.Location = new System.Drawing.Point(443, 59);
-            this.txtarea.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtarea.Margin = new System.Windows.Forms.Padding(2);
             this.txtarea.Name = "txtarea";
             this.txtarea.Size = new System.Drawing.Size(105, 26);
             this.txtarea.TabIndex = 19;
@@ -278,7 +282,7 @@
             // txtcargo
             // 
             this.txtcargo.Location = new System.Drawing.Point(443, 24);
-            this.txtcargo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcargo.Margin = new System.Windows.Forms.Padding(2);
             this.txtcargo.Name = "txtcargo";
             this.txtcargo.Size = new System.Drawing.Size(105, 26);
             this.txtcargo.TabIndex = 18;
@@ -286,7 +290,7 @@
             // txtdistrito
             // 
             this.txtdistrito.Location = new System.Drawing.Point(97, 280);
-            this.txtdistrito.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdistrito.Margin = new System.Windows.Forms.Padding(2);
             this.txtdistrito.Name = "txtdistrito";
             this.txtdistrito.Size = new System.Drawing.Size(82, 26);
             this.txtdistrito.TabIndex = 17;
@@ -294,7 +298,7 @@
             // txtdireccion
             // 
             this.txtdireccion.Location = new System.Drawing.Point(97, 243);
-            this.txtdireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(227, 26);
             this.txtdireccion.TabIndex = 16;
@@ -302,7 +306,7 @@
             // txtcorreo
             // 
             this.txtcorreo.Location = new System.Drawing.Point(97, 172);
-            this.txtcorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcorreo.Margin = new System.Windows.Forms.Padding(2);
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(229, 26);
             this.txtcorreo.TabIndex = 14;
@@ -310,7 +314,7 @@
             // txttelefono
             // 
             this.txttelefono.Location = new System.Drawing.Point(97, 135);
-            this.txttelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txttelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(82, 26);
             this.txttelefono.TabIndex = 13;
@@ -318,7 +322,7 @@
             // txtapellido1
             // 
             this.txtapellido1.Location = new System.Drawing.Point(97, 97);
-            this.txtapellido1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtapellido1.Margin = new System.Windows.Forms.Padding(2);
             this.txtapellido1.Name = "txtapellido1";
             this.txtapellido1.Size = new System.Drawing.Size(104, 26);
             this.txtapellido1.TabIndex = 12;
@@ -326,7 +330,7 @@
             // txtnombre1
             // 
             this.txtnombre1.Location = new System.Drawing.Point(97, 59);
-            this.txtnombre1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnombre1.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombre1.Name = "txtnombre1";
             this.txtnombre1.Size = new System.Drawing.Size(104, 26);
             this.txtnombre1.TabIndex = 11;
@@ -334,7 +338,7 @@
             // txtdni
             // 
             this.txtdni.Location = new System.Drawing.Point(97, 24);
-            this.txtdni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdni.Margin = new System.Windows.Forms.Padding(2);
             this.txtdni.Name = "txtdni";
             this.txtdni.Size = new System.Drawing.Size(76, 26);
             this.txtdni.TabIndex = 10;
@@ -469,7 +473,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Añadirempleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Añadirempleado";

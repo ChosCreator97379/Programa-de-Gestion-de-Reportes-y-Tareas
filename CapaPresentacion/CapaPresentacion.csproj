@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo_rea_._Mesa_de_trabajo_1 %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClosedXML, Version=0.102.3.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
       <HintPath>..\packages\ClosedXML.0.102.3\lib\netstandard2.0\ClosedXML.dll</HintPath>
@@ -347,6 +350,43 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo_Arreglado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo_rea_._Mesa_de_trabajo_1 %281%29.ico" />
+    <None Include="Resources\salir-alternativa.png" />
+    <None Include="Resources\actualizar %281%29.png" />
+    <None Include="Resources\capa-mas.png" />
+    <None Include="Resources\ingresar.png" />
+    <None Include="Resources\circulo-cruzado %281%29.png" />
+    <None Include="Resources\disco.png" />
+    <None Include="Resources\disco %281%29.png" />
+    <None Include="Resources\circulo-cruzado.png" />
+    <None Include="Resources\seleccione.png" />
+    <None Include="Resources\archivo-excel.png" />
+    <None Include="Resources\basura %282%29.png" />
+    <None Include="Resources\editar %281%29.png" />
+    <None Include="Resources\busqueda %284%29.png" />
+    <None Include="Resources\busqueda %283%29.png" />
+    <None Include="Resources\busqueda %282%29.png" />
+    <None Include="Resources\recibo.png" />
+    <None Include="Resources\hombre-empleado-alt.png" />
+    <None Include="Resources\alt-administrador %281%29.png" />
+    <None Include="Resources\lista-de-tablas.png" />
+    <None Include="Resources\archivos-medicos %281%29.png" />
+    <None Include="Resources\hogar %285%29.png" />
+    <None Include="Resources\hogar %284%29.png" />
+    <None Include="Resources\hogar %283%29.png" />
+    <None Include="Resources\hogar %282%29.png" />
+    <None Include="Resources\hogar.png" />
+    <None Include="Resources\hacer.png" />
+    <None Include="Resources\editar.png" />
+    <None Include="Resources\cruz.png" />
+    <None Include="Resources\controlar.png" />
+    <None Include="Resources\busqueda.png" />
+    <None Include="Resources\busqueda %281%29.png" />
+    <None Include="Resources\basura.png" />
+    <None Include="Resources\archivos-medicos.png" />
+    <None Include="Resources\alt-administrador.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

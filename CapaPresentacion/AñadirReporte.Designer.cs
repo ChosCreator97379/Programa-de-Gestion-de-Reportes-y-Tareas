@@ -114,11 +114,13 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(272, 195);
+            this.button2.Image = global::CapaPresentacion.Properties.Resources.circulo_cruzado__1_;
+            this.button2.Location = new System.Drawing.Point(272, 187);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 36);
+            this.button2.Size = new System.Drawing.Size(121, 52);
             this.button2.TabIndex = 7;
             this.button2.Text = "Cancelar";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -126,11 +128,13 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(93, 195);
+            this.button1.Image = global::CapaPresentacion.Properties.Resources.seleccione;
+            this.button1.Location = new System.Drawing.Point(85, 187);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 36);
+            this.button1.Size = new System.Drawing.Size(134, 52);
             this.button1.TabIndex = 6;
             this.button1.Text = "Crear Reporte";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

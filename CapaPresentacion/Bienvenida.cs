@@ -81,5 +81,16 @@ namespace CapaPresentacion
             Descarga_de_Excel cuenta = new Descarga_de_Excel();
             cuenta.Show();
         }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Bienvenida_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

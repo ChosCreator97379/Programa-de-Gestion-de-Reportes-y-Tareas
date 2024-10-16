@@ -74,12 +74,14 @@
             this.cmbAudiovisual = new System.Windows.Forms.ComboBox();
             this.cmbDiseñador = new System.Windows.Forms.ComboBox();
             this.cmbMarketing = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.label20);
@@ -128,7 +130,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(754, 421);
+            this.groupBox1.Size = new System.Drawing.Size(800, 421);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Editar Reporte";
@@ -171,18 +173,20 @@
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGuardar.Location = new System.Drawing.Point(581, 349);
+            this.btnGuardar.Image = global::CapaPresentacion.Properties.Resources.disco;
+            this.btnGuardar.Location = new System.Drawing.Point(668, 330);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(97, 41);
+            this.btnGuardar.Size = new System.Drawing.Size(97, 70);
             this.btnGuardar.TabIndex = 40;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(578, 279);
+            this.label19.Location = new System.Drawing.Point(548, 296);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(49, 15);
             this.label19.TabIndex = 39;
@@ -352,7 +356,7 @@
             // 
             // txtPuntaje
             // 
-            this.txtPuntaje.Location = new System.Drawing.Point(581, 297);
+            this.txtPuntaje.Location = new System.Drawing.Point(551, 314);
             this.txtPuntaje.Name = "txtPuntaje";
             this.txtPuntaje.Size = new System.Drawing.Size(75, 23);
             this.txtPuntaje.TabIndex = 20;
@@ -508,12 +512,27 @@
             this.cmbMarketing.TabIndex = 0;
             this.cmbMarketing.SelectedIndexChanged += new System.EventHandler(this.cmbMarketing_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Image = global::CapaPresentacion.Properties.Resources.circulo_cruzado__1_;
+            this.button1.Location = new System.Drawing.Point(668, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 69);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Cancelar";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // EditarReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(778, 457);
+            this.ClientSize = new System.Drawing.Size(824, 457);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
@@ -575,5 +594,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtCuenta;
         private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Button button1;
     }
 }

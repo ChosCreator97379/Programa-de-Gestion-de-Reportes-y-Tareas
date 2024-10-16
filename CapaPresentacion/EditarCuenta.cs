@@ -112,5 +112,10 @@ namespace CapaPresentacion
             string[] partes = nombreCompleto.Split(' ');
             return $"{partes[0]} {partes[1]}"; // Retorna solo el primer nombre y apellido
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

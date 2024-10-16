@@ -80,7 +80,6 @@ namespace CapaPresentacion
 
                 TareaCN.ActualizarTarea(id, fechaLimite, completado, link);
                 MessageBox.Show("Tarea actualizada correctamente.");
-                this.Close();
             }
             catch (Exception ex)
             {

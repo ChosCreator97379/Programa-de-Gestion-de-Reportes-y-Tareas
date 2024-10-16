@@ -118,22 +118,130 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="logo_rea_._Mesa_de_trabajo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo_rea_._Mesa_de_trabajo_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="busqueda (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\busqueda (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo_rea_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_rea_._Mesa_de_trabajo_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="X" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\X.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="este" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\este.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hombre-empleado-alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hombre-empleado-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo_horizontal_Mesa_de_trabajo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_horizontal_Mesa_de_trabajo_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cruz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cruz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="disco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_rea_._Mesa_de_trabajo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo_rea_._Mesa_de_trabajo_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alt-administrador" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alt-administrador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="controlar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\controlar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="basura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\basura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hogar (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hogar (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icone-x-noir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icone-x-noir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Logo_Arreglado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_Arreglado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="archivo-excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\archivo-excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="busqueda (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\busqueda (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="archivos-medicos (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\archivos-medicos (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="busqueda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\busqueda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hogar (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hogar (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circulo-cruzado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circulo-cruzado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hogar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hogar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="X" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\X.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="busqueda (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\busqueda (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="actualizar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actualizar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seleccione" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seleccione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alt-administrador (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alt-administrador (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="archivo-excel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\archivo-excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="recibo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\recibo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lista-de-tablas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lista-de-tablas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="capa-mas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\capa-mas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hogar (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hogar (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circulo-cruzado (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circulo-cruzado (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="basura (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\basura (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="este" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\este.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ingresar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ingresar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hogar (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hogar (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="busqueda (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\busqueda (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="disco (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disco (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="archivos-medicos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\archivos-medicos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="salir-alternativa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\salir-alternativa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
