@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnBuscarRegistro = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.cmbCampoBusqueda = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnDescargarTodo = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnBuscarRegistro = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -65,23 +66,6 @@
             this.groupBox2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox2_Paint);
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // btnBuscarRegistro
-            // 
-            this.btnBuscarRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.btnBuscarRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarRegistro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarRegistro.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnBuscarRegistro.Image = global::CapaPresentacion.Properties.Resources.busqueda__4_;
-            this.btnBuscarRegistro.Location = new System.Drawing.Point(448, 30);
-            this.btnBuscarRegistro.Name = "btnBuscarRegistro";
-            this.btnBuscarRegistro.Size = new System.Drawing.Size(99, 35);
-            this.btnBuscarRegistro.TabIndex = 16;
-            this.btnBuscarRegistro.Text = "Buscar";
-            this.btnBuscarRegistro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscarRegistro.UseVisualStyleBackColor = false;
-            this.btnBuscarRegistro.Click += new System.EventHandler(this.btnBuscarRegistro_Click);
-            // 
             // txtBusqueda
             // 
             this.txtBusqueda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -106,14 +90,14 @@
             // 
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView.Location = new System.Drawing.Point(6, 83);
             this.dataGridView.Name = "dataGridView";
@@ -137,6 +121,23 @@
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // btnDescargarTodo
+            // 
+            this.btnDescargarTodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnDescargarTodo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDescargarTodo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDescargarTodo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDescargarTodo.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnDescargarTodo.Image = global::CapaPresentacion.Properties.Resources.archivo_excel1;
+            this.btnDescargarTodo.Location = new System.Drawing.Point(1040, 333);
+            this.btnDescargarTodo.Name = "btnDescargarTodo";
+            this.btnDescargarTodo.Size = new System.Drawing.Size(113, 105);
+            this.btnDescargarTodo.TabIndex = 22;
+            this.btnDescargarTodo.Text = "Descargar en Excel (Todo)";
+            this.btnDescargarTodo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDescargarTodo.UseVisualStyleBackColor = false;
+            this.btnDescargarTodo.Click += new System.EventHandler(this.btnDescargarTodo_Click);
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
@@ -145,11 +146,11 @@
             this.button4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.Window;
             this.button4.Image = global::CapaPresentacion.Properties.Resources.archivo_excel1;
-            this.button4.Location = new System.Drawing.Point(16, 433);
+            this.button4.Location = new System.Drawing.Point(1040, 143);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(93, 105);
+            this.button4.Size = new System.Drawing.Size(113, 105);
             this.button4.TabIndex = 21;
-            this.button4.Text = "Descargar en Excel";
+            this.button4.Text = "Descargar en Excel (Unidad)";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -171,6 +172,23 @@
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
+            // btnBuscarRegistro
+            // 
+            this.btnBuscarRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.btnBuscarRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarRegistro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarRegistro.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnBuscarRegistro.Image = global::CapaPresentacion.Properties.Resources.busqueda__4_;
+            this.btnBuscarRegistro.Location = new System.Drawing.Point(448, 30);
+            this.btnBuscarRegistro.Name = "btnBuscarRegistro";
+            this.btnBuscarRegistro.Size = new System.Drawing.Size(99, 35);
+            this.btnBuscarRegistro.TabIndex = 16;
+            this.btnBuscarRegistro.Text = "Buscar";
+            this.btnBuscarRegistro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscarRegistro.UseVisualStyleBackColor = false;
+            this.btnBuscarRegistro.Click += new System.EventHandler(this.btnBuscarRegistro_Click);
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
@@ -179,7 +197,7 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Window;
             this.button2.Image = global::CapaPresentacion.Properties.Resources.basura__2_;
-            this.button2.Location = new System.Drawing.Point(17, 326);
+            this.button2.Location = new System.Drawing.Point(18, 427);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 88);
             this.button2.TabIndex = 19;
@@ -196,7 +214,7 @@
             this.button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Window;
             this.button3.Image = global::CapaPresentacion.Properties.Resources.capa_mas;
-            this.button3.Location = new System.Drawing.Point(17, 115);
+            this.button3.Location = new System.Drawing.Point(19, 143);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 89);
             this.button3.TabIndex = 20;
@@ -213,7 +231,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
             this.button1.Image = global::CapaPresentacion.Properties.Resources.editar__1_;
-            this.button1.Location = new System.Drawing.Point(18, 219);
+            this.button1.Location = new System.Drawing.Point(19, 289);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 89);
             this.button1.TabIndex = 18;
@@ -238,8 +256,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(1041, 565);
+            this.ClientSize = new System.Drawing.Size(1165, 565);
             this.ControlBox = false;
+            this.Controls.Add(this.btnDescargarTodo);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button2);
@@ -275,5 +294,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
+        private System.Windows.Forms.Button btnDescargarTodo;
     }
 }

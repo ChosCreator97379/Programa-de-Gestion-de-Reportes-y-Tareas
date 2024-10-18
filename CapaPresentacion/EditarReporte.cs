@@ -153,7 +153,7 @@ namespace CapaPresentacion
             int horasM = int.Parse(txtHorasM.Text);
             int horasD = int.Parse(txtHorasD.Text);
             int horasA = int.Parse(txtHorasA.Text);
-            int puntaje = int.Parse(txtPuntaje.Text);
+            int puntaje = ((horasM+horasD+horasA)/3);
 
             ReportesCN.EditarReporte(_idReporte, cuenta, marketing, disenador, audiovisual, fecha,
                                       cumplioActividad1, cumplioActividad2, hora1, reporte1, observacion1,

@@ -113,6 +113,7 @@ namespace CapaPresentacion
         private void button1_Click(object sender, EventArgs e)
         {
             string cuenta = txtCuenta.Text;
+            DateTime fecha = dtpFecha.Value;
 
             // Obtener los nombres completos si están seleccionados, o establecer un valor por defecto (vacío)
             string marketing = cmbMarketing.SelectedItem != null ? ObtenerNombreCompleto(cmbMarketing.SelectedItem.ToString()) : string.Empty;
@@ -121,7 +122,7 @@ namespace CapaPresentacion
 
             // Crear una instancia de la capa de negocio
             ReportesCN reportesCN = new ReportesCN();
-            reportesCN.CrearReporte(cuenta, marketing, disenador, audiovisual);
+            reportesCN.CrearReporte(cuenta, fecha, marketing, disenador, audiovisual);
 
             // Opcional: Mostrar un mensaje de éxito o limpiar los campos
             MessageBox.Show("Reporte agregado exitosamente.");
@@ -220,6 +221,11 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Error al cargar los empleados: " + ex.Message);
             }
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

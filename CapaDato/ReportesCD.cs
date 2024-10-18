@@ -38,6 +38,7 @@ namespace CapaDato
 
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
+                    
                     comando.Parameters.AddWithValue("@Fecha", fecha);
                     comando.Parameters.AddWithValue("@Cuenta", cuenta);
                     comando.Parameters.AddWithValue("@Marketing", marketing);

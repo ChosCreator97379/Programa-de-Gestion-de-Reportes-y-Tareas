@@ -241,6 +241,12 @@
     <Compile Include="RegistroReportes.Designer.cs">
       <DependentUpon>RegistroReportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteDescarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteDescarga.Designer.cs">
+      <DependentUpon>ReporteDescarga.cs</DependentUpon>
+    </Compile>
     <Compile Include="TablaTarea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     </Compile>
     <EmbeddedResource Include="RegistroReportes.resx">
       <DependentUpon>RegistroReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteDescarga.resx">
+      <DependentUpon>ReporteDescarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TablaTarea.resx">
       <DependentUpon>TablaTarea.cs</DependentUpon>

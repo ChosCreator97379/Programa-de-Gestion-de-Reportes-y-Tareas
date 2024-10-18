@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.txtFecha = new System.Windows.Forms.Label();
             this.txtCuenta = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbAudiovisual = new System.Windows.Forms.ComboBox();
@@ -45,6 +47,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.groupBox1.Controls.Add(this.dtpFecha);
+            this.groupBox1.Controls.Add(this.txtFecha);
             this.groupBox1.Controls.Add(this.txtCuenta);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmbAudiovisual);
@@ -65,10 +69,28 @@
             this.groupBox1.Text = "Añadir Reporte";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.CustomFormat = "dd/MM/yyyy";
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFecha.Location = new System.Drawing.Point(212, 64);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 25);
+            this.dtpFecha.TabIndex = 16;
+            // 
+            // txtFecha
+            // 
+            this.txtFecha.AutoSize = true;
+            this.txtFecha.Location = new System.Drawing.Point(209, 44);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(43, 17);
+            this.txtFecha.TabIndex = 15;
+            this.txtFecha.Text = "Fecha";
+            // 
             // txtCuenta
             // 
             this.txtCuenta.FormattingEnabled = true;
-            this.txtCuenta.Location = new System.Drawing.Point(171, 64);
+            this.txtCuenta.Location = new System.Drawing.Point(59, 64);
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(121, 25);
             this.txtCuenta.TabIndex = 13;
@@ -77,7 +99,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(168, 44);
+            this.label4.Location = new System.Drawing.Point(56, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 17);
             this.label4.TabIndex = 12;
@@ -200,5 +222,7 @@
         private System.Windows.Forms.ComboBox cmbMarketing;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox txtCuenta;
+        private System.Windows.Forms.Label txtFecha;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }

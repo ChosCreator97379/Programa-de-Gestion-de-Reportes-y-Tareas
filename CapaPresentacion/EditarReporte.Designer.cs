@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtHorasA = new System.Windows.Forms.NumericUpDown();
+            this.txtHorasD = new System.Windows.Forms.NumericUpDown();
+            this.txtHorasM = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -54,9 +59,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPuntaje = new System.Windows.Forms.TextBox();
-            this.txtHorasA = new System.Windows.Forms.TextBox();
-            this.txtHorasD = new System.Windows.Forms.TextBox();
-            this.txtHorasM = new System.Windows.Forms.TextBox();
             this.txtActA = new System.Windows.Forms.TextBox();
             this.txtActD = new System.Windows.Forms.TextBox();
             this.txtActM = new System.Windows.Forms.TextBox();
@@ -74,13 +76,20 @@
             this.cmbAudiovisual = new System.Windows.Forms.ComboBox();
             this.cmbDiseñador = new System.Windows.Forms.ComboBox();
             this.cmbMarketing = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHorasA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHorasD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHorasM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.groupBox1.Controls.Add(this.txtHorasA);
+            this.groupBox1.Controls.Add(this.txtHorasD);
+            this.groupBox1.Controls.Add(this.txtHorasM);
+            this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.label21);
@@ -107,9 +116,6 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtPuntaje);
-            this.groupBox1.Controls.Add(this.txtHorasA);
-            this.groupBox1.Controls.Add(this.txtHorasD);
-            this.groupBox1.Controls.Add(this.txtHorasM);
             this.groupBox1.Controls.Add(this.txtActA);
             this.groupBox1.Controls.Add(this.txtActD);
             this.groupBox1.Controls.Add(this.txtActM);
@@ -136,8 +142,68 @@
             this.groupBox1.Text = "Editar Reporte";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // txtHorasA
+            // 
+            this.txtHorasA.Location = new System.Drawing.Point(414, 367);
+            this.txtHorasA.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.txtHorasA.Name = "txtHorasA";
+            this.txtHorasA.Size = new System.Drawing.Size(106, 23);
+            this.txtHorasA.TabIndex = 50;
+            // 
+            // txtHorasD
+            // 
+            this.txtHorasD.Location = new System.Drawing.Point(414, 323);
+            this.txtHorasD.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.txtHorasD.Name = "txtHorasD";
+            this.txtHorasD.Size = new System.Drawing.Size(106, 23);
+            this.txtHorasD.TabIndex = 49;
+            // 
+            // txtHorasM
+            // 
+            this.txtHorasM.Location = new System.Drawing.Point(414, 280);
+            this.txtHorasM.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.txtHorasM.Name = "txtHorasM";
+            this.txtHorasM.Size = new System.Drawing.Size(106, 23);
+            this.txtHorasM.TabIndex = 48;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(1181, 377);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 23);
+            this.numericUpDown1.TabIndex = 47;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Image = global::CapaPresentacion.Properties.Resources.circulo_cruzado__1_;
+            this.button1.Location = new System.Drawing.Point(668, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 69);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Cancelar";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dtpFecha
             // 
+            this.dtpFecha.CustomFormat = "dd/MM/yyyy";
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFecha.Location = new System.Drawing.Point(183, 58);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 23);
@@ -197,27 +263,27 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(411, 349);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(109, 15);
+            this.label18.Size = new System.Drawing.Size(60, 15);
             this.label18.TabIndex = 38;
-            this.label18.Text = "Horas Cumplidas A";
+            this.label18.Text = "Puntaje A";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(411, 305);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(110, 15);
+            this.label17.Size = new System.Drawing.Size(61, 15);
             this.label17.TabIndex = 37;
-            this.label17.Text = "Horas Cumplidas D";
+            this.label17.Text = "Puntaje D";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(411, 261);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(112, 15);
+            this.label16.Size = new System.Drawing.Size(63, 15);
             this.label16.TabIndex = 36;
-            this.label16.Text = "Horas Cumplidas M";
+            this.label16.Text = "Puntaje M";
             // 
             // label15
             // 
@@ -362,27 +428,6 @@
             this.txtPuntaje.TabIndex = 20;
             this.txtPuntaje.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
-            // txtHorasA
-            // 
-            this.txtHorasA.Location = new System.Drawing.Point(414, 368);
-            this.txtHorasA.Name = "txtHorasA";
-            this.txtHorasA.Size = new System.Drawing.Size(109, 23);
-            this.txtHorasA.TabIndex = 19;
-            // 
-            // txtHorasD
-            // 
-            this.txtHorasD.Location = new System.Drawing.Point(414, 323);
-            this.txtHorasD.Name = "txtHorasD";
-            this.txtHorasD.Size = new System.Drawing.Size(109, 23);
-            this.txtHorasD.TabIndex = 18;
-            // 
-            // txtHorasM
-            // 
-            this.txtHorasM.Location = new System.Drawing.Point(414, 279);
-            this.txtHorasM.Name = "txtHorasM";
-            this.txtHorasM.Size = new System.Drawing.Size(109, 23);
-            this.txtHorasM.TabIndex = 17;
-            // 
             // txtActA
             // 
             this.txtActA.Location = new System.Drawing.Point(248, 368);
@@ -512,21 +557,6 @@
             this.cmbMarketing.TabIndex = 0;
             this.cmbMarketing.SelectedIndexChanged += new System.EventHandler(this.cmbMarketing_SelectedIndexChanged);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(41)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Image = global::CapaPresentacion.Properties.Resources.circulo_cruzado__1_;
-            this.button1.Location = new System.Drawing.Point(668, 251);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 69);
-            this.button1.TabIndex = 46;
-            this.button1.Text = "Cancelar";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // EditarReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -542,6 +572,10 @@
             this.Load += new System.EventHandler(this.EditarReporte_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHorasA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHorasD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHorasM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -563,9 +597,6 @@
         private System.Windows.Forms.TextBox txtReporte3;
         private System.Windows.Forms.TextBox txtReporte2;
         private System.Windows.Forms.TextBox txtReporte1;
-        private System.Windows.Forms.TextBox txtHorasA;
-        private System.Windows.Forms.TextBox txtHorasD;
-        private System.Windows.Forms.TextBox txtHorasM;
         private System.Windows.Forms.TextBox txtActA;
         private System.Windows.Forms.TextBox txtActD;
         private System.Windows.Forms.TextBox txtActM;
@@ -595,5 +626,9 @@
         private System.Windows.Forms.TextBox txtCuenta;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown txtHorasA;
+        private System.Windows.Forms.NumericUpDown txtHorasD;
+        private System.Windows.Forms.NumericUpDown txtHorasM;
     }
 }

@@ -216,6 +216,7 @@ namespace CapaPresentacion
                 var worksheet = workbook.Worksheets.Add("Reporte");
 
                 // Encabezados
+                worksheet.Cell("A2").Value = "Fecha";
                 worksheet.Cell("B2").Value = "ID";
                 worksheet.Cell("C2").Value = "Cuenta";
                 worksheet.Range("D2:E2").Merge().Value = "Marketing";
@@ -239,7 +240,7 @@ namespace CapaPresentacion
                 worksheet.Cell("O3").Value = "D";
                 worksheet.Cell("P3").Value = "A";
 
-                worksheet.Range("Q2:S2").Merge().Value = "Horas cumplidas";
+                worksheet.Range("Q2:S2").Merge().Value = "Puntajes";
                 worksheet.Cell("Q3").Value = "    M    ";
                 worksheet.Cell("R3").Value = "    D    ";
                 worksheet.Cell("S3").Value = "    A    ";
@@ -250,6 +251,7 @@ namespace CapaPresentacion
                 var filaSeleccionada = dataGridView.SelectedRows[0];
 
                 // Llenar datos - Conversion explícita para evitar errores de tipo
+                worksheet.Cell("A4").Value = filaSeleccionada.Cells["Fecha"].Value.ToString();
                 worksheet.Cell("B4").Value = filaSeleccionada.Cells["ID"].Value?.ToString();
                 worksheet.Cell("C4").Value = filaSeleccionada.Cells["Cuenta"].Value?.ToString();
 
@@ -301,13 +303,14 @@ namespace CapaPresentacion
                 worksheet.Cell("T4").Value = filaSeleccionada.Cells["Puntaje"].Value?.ToString();
 
                 // Diseño de los encabezados
-                var encabezados = worksheet.Range("B2:T3");
+                var encabezados = worksheet.Range("A2:T3");
                 encabezados.Style.Font.Bold = true;
                 encabezados.Style.Fill.BackgroundColor = XLColor.LightBlue;
                 encabezados.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
                 encabezados.Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
                 encabezados.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
 
+                worksheet.Range("A2:A3").Style.Fill.BackgroundColor = XLColor.BlueBell;
                 worksheet.Range("B2:B3").Style.Fill.BackgroundColor = XLColor.Orange;   // ID
                 worksheet.Range("C2:C3").Style.Fill.BackgroundColor = XLColor.LightCoral; // Cuenta
                 worksheet.Range("D2:E3").Style.Fill.BackgroundColor = XLColor.Yellow;   // Marketing
@@ -344,6 +347,12 @@ namespace CapaPresentacion
             }
 
 
+        }
+
+        private void btnDescargarTodo_Click(object sender, EventArgs e)
+        {
+            ReporteDescarga descarga = new ReporteDescarga();
+            descarga.Show();
         }
     }
 }

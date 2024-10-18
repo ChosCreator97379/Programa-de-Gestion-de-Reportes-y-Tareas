@@ -14,10 +14,9 @@ namespace CapaNegocio
             return ReportesCD.ObtenerReportes();
         }
         private ReportesCD reportesCD = new ReportesCD();
-        public void CrearReporte(string cuenta, string marketing, string disenador, string audiovisual)
+        public void CrearReporte(string cuenta, DateTime fecha, string marketing, string disenador, string audiovisual)
         {
-            DateTime fechaActual = DateTime.Now;
-            reportesCD.AgregarReporte(fechaActual, cuenta, marketing, disenador, audiovisual);
+            reportesCD.AgregarReporte(fecha, cuenta, marketing, disenador, audiovisual);
         }
         public static DataTable ObtenerReportePorID(int id)
         {
